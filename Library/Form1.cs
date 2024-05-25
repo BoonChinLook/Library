@@ -12,47 +12,44 @@ namespace Library
 {
     public partial class Form1 : Form
     {
+        private BookRepository _bookRepository;
         public Form1()
         {
             InitializeComponent();
+            _bookRepository = new BookRepository();
         }
 
-        private void lblNumber1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblNumber6_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        
+        private void Addbook_Click(object sender, EventArgs e)
+        {
+            string title = txtTitle.Text;
+            string author = txtAuthor.Text;
+
+            Book book = new Book
+            { 
+                Title = title,
+                Author = author,
+            };
+            _bookRepository.AddBook(book);
+
+            // Optionally, show a confirmation message
+            MessageBox.Show("Book added successfully!");
+
+        }
+
+        private void Updatebook_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnOpen_Click(object sender, EventArgs e)
+        private void Deletebtn_Click(object sender, EventArgs e)
         {
 
         }

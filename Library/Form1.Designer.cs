@@ -28,234 +28,268 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNumber1 = new System.Windows.Forms.Label();
-            this.lblNumber2 = new System.Windows.Forms.Label();
             this.lblNumber3 = new System.Windows.Forms.Label();
             this.lblNumber4 = new System.Windows.Forms.Label();
             this.lblNumber5 = new System.Windows.Forms.Label();
             this.lblNumber6 = new System.Windows.Forms.Label();
             this.lblNumber7 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnOpen = new System.Windows.Forms.Button();
-            this.txtNumber1 = new System.Windows.Forms.TextBox();
-            this.txtNumber2 = new System.Windows.Forms.TextBox();
+            this.txtAuthor = new System.Windows.Forms.TextBox();
             this.txtNumber3 = new System.Windows.Forms.TextBox();
             this.txtNumber4 = new System.Windows.Forms.TextBox();
             this.txtNumber5 = new System.Windows.Forms.TextBox();
             this.txtNumber6 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Deletebtn = new System.Windows.Forms.Button();
+            this.Updatebook = new System.Windows.Forms.Button();
+            this.Addbook = new System.Windows.Forms.Button();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblNumber1
-            // 
-            this.lblNumber1.AutoSize = true;
-            this.lblNumber1.Location = new System.Drawing.Point(34, 40);
-            this.lblNumber1.Name = "lblNumber1";
-            this.lblNumber1.Size = new System.Drawing.Size(66, 13);
-            this.lblNumber1.TabIndex = 0;
-            this.lblNumber1.Text = "Book Library";
-            this.lblNumber1.Click += new System.EventHandler(this.lblNumber1_Click);
-            // 
-            // lblNumber2
-            // 
-            this.lblNumber2.AutoSize = true;
-            this.lblNumber2.Location = new System.Drawing.Point(34, 68);
-            this.lblNumber2.Name = "lblNumber2";
-            this.lblNumber2.Size = new System.Drawing.Size(58, 13);
-            this.lblNumber2.TabIndex = 1;
-            this.lblNumber2.Text = "Book Title:";
             // 
             // lblNumber3
             // 
             this.lblNumber3.AutoSize = true;
-            this.lblNumber3.Location = new System.Drawing.Point(34, 94);
+            this.lblNumber3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumber3.ForeColor = System.Drawing.Color.Teal;
+            this.lblNumber3.Location = new System.Drawing.Point(106, 153);
+            this.lblNumber3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumber3.Name = "lblNumber3";
-            this.lblNumber3.Size = new System.Drawing.Size(41, 13);
+            this.lblNumber3.Size = new System.Drawing.Size(68, 22);
             this.lblNumber3.TabIndex = 3;
             this.lblNumber3.Text = "Author:";
             // 
             // lblNumber4
             // 
             this.lblNumber4.AutoSize = true;
-            this.lblNumber4.Location = new System.Drawing.Point(34, 119);
+            this.lblNumber4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumber4.ForeColor = System.Drawing.Color.Teal;
+            this.lblNumber4.Location = new System.Drawing.Point(105, 224);
+            this.lblNumber4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumber4.Name = "lblNumber4";
-            this.lblNumber4.Size = new System.Drawing.Size(39, 13);
+            this.lblNumber4.Size = new System.Drawing.Size(65, 22);
             this.lblNumber4.TabIndex = 2;
             this.lblNumber4.Text = "Genre:";
             // 
             // lblNumber5
             // 
             this.lblNumber5.AutoSize = true;
-            this.lblNumber5.Location = new System.Drawing.Point(34, 148);
+            this.lblNumber5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumber5.ForeColor = System.Drawing.Color.Teal;
+            this.lblNumber5.Location = new System.Drawing.Point(595, 81);
+            this.lblNumber5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumber5.Name = "lblNumber5";
-            this.lblNumber5.Size = new System.Drawing.Size(91, 13);
+            this.lblNumber5.Size = new System.Drawing.Size(165, 25);
             this.lblNumber5.TabIndex = 5;
             this.lblNumber5.Text = "Book Description:";
             // 
             // lblNumber6
             // 
             this.lblNumber6.AutoSize = true;
-            this.lblNumber6.Location = new System.Drawing.Point(34, 178);
+            this.lblNumber6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumber6.ForeColor = System.Drawing.Color.Teal;
+            this.lblNumber6.Location = new System.Drawing.Point(596, 155);
+            this.lblNumber6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumber6.Name = "lblNumber6";
-            this.lblNumber6.Size = new System.Drawing.Size(82, 13);
+            this.lblNumber6.Size = new System.Drawing.Size(150, 25);
             this.lblNumber6.TabIndex = 4;
             this.lblNumber6.Text = "Date Published:";
-            this.lblNumber6.Click += new System.EventHandler(this.lblNumber6_Click);
             // 
             // lblNumber7
             // 
             this.lblNumber7.AutoSize = true;
-            this.lblNumber7.Location = new System.Drawing.Point(38, 209);
+            this.lblNumber7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumber7.ForeColor = System.Drawing.Color.Teal;
+            this.lblNumber7.Location = new System.Drawing.Point(605, 226);
+            this.lblNumber7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumber7.Name = "lblNumber7";
-            this.lblNumber7.Size = new System.Drawing.Size(53, 13);
+            this.lblNumber7.Size = new System.Drawing.Size(99, 25);
             this.lblNumber7.TabIndex = 6;
             this.lblNumber7.Text = "Publisher:";
             // 
-            // btnAdd
+            // txtAuthor
             // 
-            this.btnAdd.Location = new System.Drawing.Point(31, 261);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Location = new System.Drawing.Point(112, 261);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 8;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(193, 261);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 9;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(274, 261);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 10;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnOpen
-            // 
-            this.btnOpen.Location = new System.Drawing.Point(355, 261);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(75, 23);
-            this.btnOpen.TabIndex = 11;
-            this.btnOpen.Text = "Open";
-            this.btnOpen.UseVisualStyleBackColor = true;
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
-            // 
-            // txtNumber1
-            // 
-            this.txtNumber1.Location = new System.Drawing.Point(143, 65);
-            this.txtNumber1.Name = "txtNumber1";
-            this.txtNumber1.Size = new System.Drawing.Size(256, 20);
-            this.txtNumber1.TabIndex = 12;
-            // 
-            // txtNumber2
-            // 
-            this.txtNumber2.Location = new System.Drawing.Point(143, 94);
-            this.txtNumber2.Name = "txtNumber2";
-            this.txtNumber2.Size = new System.Drawing.Size(256, 20);
-            this.txtNumber2.TabIndex = 13;
+            this.txtAuthor.Location = new System.Drawing.Point(177, 147);
+            this.txtAuthor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAuthor.Name = "txtAuthor";
+            this.txtAuthor.Size = new System.Drawing.Size(340, 22);
+            this.txtAuthor.TabIndex = 13;
             // 
             // txtNumber3
             // 
-            this.txtNumber3.Location = new System.Drawing.Point(143, 120);
+            this.txtNumber3.Location = new System.Drawing.Point(177, 222);
+            this.txtNumber3.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumber3.Name = "txtNumber3";
-            this.txtNumber3.Size = new System.Drawing.Size(256, 20);
+            this.txtNumber3.Size = new System.Drawing.Size(340, 22);
             this.txtNumber3.TabIndex = 14;
             // 
             // txtNumber4
             // 
-            this.txtNumber4.Location = new System.Drawing.Point(143, 149);
+            this.txtNumber4.Location = new System.Drawing.Point(770, 81);
+            this.txtNumber4.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumber4.Name = "txtNumber4";
-            this.txtNumber4.Size = new System.Drawing.Size(256, 20);
+            this.txtNumber4.Size = new System.Drawing.Size(340, 22);
             this.txtNumber4.TabIndex = 15;
             // 
             // txtNumber5
             // 
-            this.txtNumber5.Location = new System.Drawing.Point(143, 178);
+            this.txtNumber5.Location = new System.Drawing.Point(770, 153);
+            this.txtNumber5.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumber5.Name = "txtNumber5";
-            this.txtNumber5.Size = new System.Drawing.Size(256, 20);
+            this.txtNumber5.Size = new System.Drawing.Size(340, 22);
             this.txtNumber5.TabIndex = 16;
             // 
             // txtNumber6
             // 
-            this.txtNumber6.Location = new System.Drawing.Point(143, 204);
+            this.txtNumber6.Location = new System.Drawing.Point(770, 222);
+            this.txtNumber6.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumber6.Name = "txtNumber6";
-            this.txtNumber6.Size = new System.Drawing.Size(256, 20);
+            this.txtNumber6.Size = new System.Drawing.Size(340, 22);
             this.txtNumber6.TabIndex = 17;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(-6, -3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1164, 85);
+            this.panel1.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label2.Location = new System.Drawing.Point(436, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(185, 32);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Book Library";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.Deletebtn);
+            this.panel2.Controls.Add(this.Updatebook);
+            this.panel2.Controls.Add(this.Addbook);
+            this.panel2.Controls.Add(this.txtTitle);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lblNumber3);
+            this.panel2.Controls.Add(this.txtAuthor);
+            this.panel2.Controls.Add(this.txtNumber6);
+            this.panel2.Controls.Add(this.lblNumber4);
+            this.panel2.Controls.Add(this.txtNumber5);
+            this.panel2.Controls.Add(this.txtNumber3);
+            this.panel2.Controls.Add(this.txtNumber4);
+            this.panel2.Controls.Add(this.lblNumber5);
+            this.panel2.Controls.Add(this.lblNumber6);
+            this.panel2.Controls.Add(this.lblNumber7);
+            this.panel2.Location = new System.Drawing.Point(-6, 75);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1164, 459);
+            this.panel2.TabIndex = 19;
+            // 
+            // Deletebtn
+            // 
+            this.Deletebtn.BackColor = System.Drawing.Color.Teal;
+            this.Deletebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Deletebtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Deletebtn.Location = new System.Drawing.Point(854, 358);
+            this.Deletebtn.Name = "Deletebtn";
+            this.Deletebtn.Size = new System.Drawing.Size(131, 45);
+            this.Deletebtn.TabIndex = 22;
+            this.Deletebtn.Text = "Delete";
+            this.Deletebtn.UseVisualStyleBackColor = false;
+            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
+            // 
+            // Updatebook
+            // 
+            this.Updatebook.BackColor = System.Drawing.Color.Teal;
+            this.Updatebook.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Updatebook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Updatebook.Location = new System.Drawing.Point(621, 358);
+            this.Updatebook.Name = "Updatebook";
+            this.Updatebook.Size = new System.Drawing.Size(150, 49);
+            this.Updatebook.TabIndex = 21;
+            this.Updatebook.Text = "Update";
+            this.Updatebook.UseVisualStyleBackColor = false;
+            this.Updatebook.Click += new System.EventHandler(this.Updatebook_Click);
+            // 
+            // Addbook
+            // 
+            this.Addbook.BackColor = System.Drawing.Color.Teal;
+            this.Addbook.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Addbook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Addbook.Location = new System.Drawing.Point(109, 358);
+            this.Addbook.Name = "Addbook";
+            this.Addbook.Size = new System.Drawing.Size(123, 45);
+            this.Addbook.TabIndex = 20;
+            this.Addbook.Text = "Add";
+            this.Addbook.UseVisualStyleBackColor = false;
+            this.Addbook.Click += new System.EventHandler(this.Addbook_Click);
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Location = new System.Drawing.Point(177, 85);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(340, 22);
+            this.txtTitle.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Teal;
+            this.label1.Location = new System.Drawing.Point(105, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 25);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Title";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 392);
-            this.Controls.Add(this.txtNumber6);
-            this.Controls.Add(this.txtNumber5);
-            this.Controls.Add(this.txtNumber4);
-            this.Controls.Add(this.txtNumber3);
-            this.Controls.Add(this.txtNumber2);
-            this.Controls.Add(this.txtNumber1);
-            this.Controls.Add(this.btnOpen);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.lblNumber7);
-            this.Controls.Add(this.lblNumber5);
-            this.Controls.Add(this.lblNumber6);
-            this.Controls.Add(this.lblNumber3);
-            this.Controls.Add(this.lblNumber4);
-            this.Controls.Add(this.lblNumber2);
-            this.Controls.Add(this.lblNumber1);
+            this.ClientSize = new System.Drawing.Size(1151, 536);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblNumber1;
-        private System.Windows.Forms.Label lblNumber2;
         private System.Windows.Forms.Label lblNumber3;
         private System.Windows.Forms.Label lblNumber4;
         private System.Windows.Forms.Label lblNumber5;
         private System.Windows.Forms.Label lblNumber6;
         private System.Windows.Forms.Label lblNumber7;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnOpen;
-        private System.Windows.Forms.TextBox txtNumber1;
-        private System.Windows.Forms.TextBox txtNumber2;
+        /*private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Button OpenBtn;*/
+        private System.Windows.Forms.TextBox txtAuthor;
         private System.Windows.Forms.TextBox txtNumber3;
         private System.Windows.Forms.TextBox txtNumber4;
         private System.Windows.Forms.TextBox txtNumber5;
         private System.Windows.Forms.TextBox txtNumber6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Addbook;
+        private System.Windows.Forms.Button Updatebook;
+        private System.Windows.Forms.Button Deletebtn;
     }
 }
 
