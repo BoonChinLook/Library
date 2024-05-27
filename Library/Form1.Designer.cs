@@ -43,7 +43,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.Deletebtn = new System.Windows.Forms.Button();
             this.Updatebook = new System.Windows.Forms.Button();
-            this.Addbook = new System.Windows.Forms.Button();
+            this.btnAddbook = new System.Windows.Forms.Button();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -175,7 +175,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.panel2.Controls.Add(this.Deletebtn);
             this.panel2.Controls.Add(this.Updatebook);
-            this.panel2.Controls.Add(this.Addbook);
+            this.panel2.Controls.Add(this.btnAddbook);
             this.panel2.Controls.Add(this.txtTitle);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.lblNumber3);
@@ -219,18 +219,18 @@
             this.Updatebook.UseVisualStyleBackColor = false;
             this.Updatebook.Click += new System.EventHandler(this.Updatebook_Click);
             // 
-            // Addbook
+            // btnAddbook
             // 
-            this.Addbook.BackColor = System.Drawing.Color.Teal;
-            this.Addbook.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Addbook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.Addbook.Location = new System.Drawing.Point(109, 358);
-            this.Addbook.Name = "Addbook";
-            this.Addbook.Size = new System.Drawing.Size(123, 45);
-            this.Addbook.TabIndex = 20;
-            this.Addbook.Text = "Add";
-            this.Addbook.UseVisualStyleBackColor = false;
-            this.Addbook.Click += new System.EventHandler(this.Addbook_Click);
+            this.btnAddbook.BackColor = System.Drawing.Color.Teal;
+            this.btnAddbook.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddbook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAddbook.Location = new System.Drawing.Point(109, 358);
+            this.btnAddbook.Name = "btnAddbook";
+            this.btnAddbook.Size = new System.Drawing.Size(123, 45);
+            this.btnAddbook.TabIndex = 20;
+            this.btnAddbook.Text = "Add";
+            this.btnAddbook.UseVisualStyleBackColor = false;
+            this.btnAddbook.Click += new System.EventHandler(this.btnAddbook_Click);
             // 
             // txtTitle
             // 
@@ -287,7 +287,7 @@
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button Addbook;
+        private System.Windows.Forms.Button btnAddbook;
         private System.Windows.Forms.Button Updatebook;
         private System.Windows.Forms.Button Deletebtn;
     }

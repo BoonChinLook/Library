@@ -10,8 +10,8 @@ public class Database
         // Replace these with your database credentials
         string server = "127.0.0.1";
         string database = "mydatabase";
-        string uid = "root";
-        string password = "Reshma@1986";
+        string uid = "admin";
+        string password = "admin@123";
 
         connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
     }

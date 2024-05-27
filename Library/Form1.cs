@@ -27,7 +27,7 @@ namespace Library
         }
 
         
-        private void Addbook_Click(object sender, EventArgs e)
+        private void btnAddbook_Click(object sender, EventArgs e)
         {
             string title = txtTitle.Text;
             string author = txtAuthor.Text;
