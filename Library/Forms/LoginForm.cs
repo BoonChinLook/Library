@@ -20,6 +20,10 @@ namespace Library
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //Comparing the entered information with the database will proceed once Reshma creates the users table.
+            var frm = new Form2();
+            frm.Closed += (s, args) => this.Close();
+            this.Hide();
+            frm.Show();
         }
         private void btnRegister_Click(object sender, EventArgs e)
         {
