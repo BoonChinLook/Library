@@ -39,13 +39,12 @@
             this.txtNumber5 = new System.Windows.Forms.TextBox();
             this.txtNumber6 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Deletebtn = new System.Windows.Forms.Button();
-            this.Updatebook = new System.Windows.Forms.Button();
             this.btnAddbook = new System.Windows.Forms.Button();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnLibraryButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -153,28 +152,16 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnLibraryButton);
             this.panel1.Location = new System.Drawing.Point(-6, -3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1164, 85);
+            this.panel1.Size = new System.Drawing.Size(1164, 54);
             this.panel1.TabIndex = 18;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(436, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(185, 32);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Book Library";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel2.Controls.Add(this.Deletebtn);
-            this.panel2.Controls.Add(this.Updatebook);
             this.panel2.Controls.Add(this.btnAddbook);
             this.panel2.Controls.Add(this.txtTitle);
             this.panel2.Controls.Add(this.label1);
@@ -188,43 +175,19 @@
             this.panel2.Controls.Add(this.lblNumber5);
             this.panel2.Controls.Add(this.lblNumber6);
             this.panel2.Controls.Add(this.lblNumber7);
-            this.panel2.Location = new System.Drawing.Point(-6, 75);
+            this.panel2.Location = new System.Drawing.Point(-6, 51);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1164, 459);
+            this.panel2.Size = new System.Drawing.Size(1164, 483);
             this.panel2.TabIndex = 19;
-            // 
-            // Deletebtn
-            // 
-            this.Deletebtn.BackColor = System.Drawing.Color.Teal;
-            this.Deletebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Deletebtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.Deletebtn.Location = new System.Drawing.Point(854, 358);
-            this.Deletebtn.Name = "Deletebtn";
-            this.Deletebtn.Size = new System.Drawing.Size(131, 45);
-            this.Deletebtn.TabIndex = 22;
-            this.Deletebtn.Text = "Delete";
-            this.Deletebtn.UseVisualStyleBackColor = false;
-            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
-            // 
-            // Updatebook
-            // 
-            this.Updatebook.BackColor = System.Drawing.Color.Teal;
-            this.Updatebook.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Updatebook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.Updatebook.Location = new System.Drawing.Point(621, 358);
-            this.Updatebook.Name = "Updatebook";
-            this.Updatebook.Size = new System.Drawing.Size(150, 49);
-            this.Updatebook.TabIndex = 21;
-            this.Updatebook.Text = "Update";
-            this.Updatebook.UseVisualStyleBackColor = false;
-            this.Updatebook.Click += new System.EventHandler(this.Updatebook_Click);
             // 
             // btnAddbook
             // 
             this.btnAddbook.BackColor = System.Drawing.Color.Teal;
+            this.btnAddbook.FlatAppearance.BorderSize = 0;
+            this.btnAddbook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddbook.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddbook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAddbook.Location = new System.Drawing.Point(109, 358);
+            this.btnAddbook.Location = new System.Drawing.Point(521, 327);
             this.btnAddbook.Name = "btnAddbook";
             this.btnAddbook.Size = new System.Drawing.Size(123, 45);
             this.btnAddbook.TabIndex = 20;
@@ -250,6 +213,34 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Title";
             // 
+            // btnLibraryButton
+            // 
+            this.btnLibraryButton.BackColor = System.Drawing.Color.Teal;
+            this.btnLibraryButton.FlatAppearance.BorderSize = 0;
+            this.btnLibraryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLibraryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLibraryButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnLibraryButton.Location = new System.Drawing.Point(18, 9);
+            this.btnLibraryButton.Name = "btnLibraryButton";
+            this.btnLibraryButton.Size = new System.Drawing.Size(93, 39);
+            this.btnLibraryButton.TabIndex = 0;
+            this.btnLibraryButton.Text = "Library";
+            this.btnLibraryButton.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.Location = new System.Drawing.Point(97, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 33);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Log Out";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -262,7 +253,6 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -286,10 +276,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddbook;
-        private System.Windows.Forms.Button Updatebook;
-        private System.Windows.Forms.Button Deletebtn;
+        private System.Windows.Forms.Button btnLibraryButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 

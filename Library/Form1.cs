@@ -44,14 +44,6 @@ namespace Library
 
         }
 
-        private void Updatebook_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Deletebtn_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
