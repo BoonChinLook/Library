@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Library
 {
-    public partial class Form2 : Form
+    public partial class WelcomeForm : Form
     {
-        public Form2()
+        public WelcomeForm()
         {
             InitializeComponent();
             lblWelcome.Text = $"{User.CurrentUser.Name}\r\n{lblWelcome.Text}";

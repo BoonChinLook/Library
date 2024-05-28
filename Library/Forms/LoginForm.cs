@@ -35,7 +35,7 @@ namespace Library
                     else
                     {
                         User.CurrentUser = foundUser;
-                        var frm = new Form2();
+                        var frm = new WelcomeForm();
                         frm.Closed += (s, args) => this.Close();
                         this.Hide();
                         frm.Show();
