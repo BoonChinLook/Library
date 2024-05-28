@@ -34,10 +34,8 @@ namespace Library.Forms
                 errorMessage += "The password and the confirmation password must match. ";
             if (loginCheck && pwCheck && pwReCheck) 
             {
-                if (LibraryContext.Db.Users.Where(v => v.Name == txtUserName.Text).FirstOrDefault() != null)
-                {
+                if (LibraryContext.Db.Users.FirstOrDefault(v => v.Name == txtUserName.Text) != null)
                     MessageBox.Show($"User with name {txtUserName.Text} already exists!");
-                }
                 else
                 {
                     var newUser = new User { Name = txtUserName.Text, Password = txtPassword.Text };
@@ -50,9 +48,7 @@ namespace Library.Forms
                 }
             }
             else
-            {
                 MessageBox.Show(errorMessage);
-            }
         }
 
     }

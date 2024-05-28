@@ -12,11 +12,12 @@ namespace Library.Model
     {
         protected override void Seed(LibraryContext context)
         {
-            var user1 = new User { Id = 1, Name = "User1", Password = "1" };
-
-            context.Users.Add(user1);
-
-            context.SaveChanges();
+            if(context.Users.Count() == 0)
+            {
+                var user1 = new User { Id = 1, Name = "User1", Password = "1" };
+                context.Users.Add(user1);
+                context.SaveChanges();
+            }
         }
     }
 }

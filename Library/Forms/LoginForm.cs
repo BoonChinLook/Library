@@ -17,6 +17,7 @@ namespace Library
         public LoginForm()
         {
             InitializeComponent();
+            lblTotalUsers.Text += LibraryContext.Db.Users.Count();
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -24,7 +25,7 @@ namespace Library
                 MessageBox.Show("Enter Login & Password");
             else
             {
-                var foundUser = LibraryContext.Db.Users.Where(v => v.Name == txtUsername.Text).FirstOrDefault();
+                var foundUser = LibraryContext.Db.Users.FirstOrDefault(v => v.Name == txtUsername.Text);
                 if (foundUser == null)
                     MessageBox.Show("Login is not exists!");
                 else

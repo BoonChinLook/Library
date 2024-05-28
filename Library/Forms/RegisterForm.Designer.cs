@@ -43,7 +43,7 @@
             this.lblUsername.Location = new System.Drawing.Point(288, 111);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(70, 16);
-            this.lblUsername.TabIndex = 6;
+            this.lblUsername.TabIndex = 4;
             this.lblUsername.Text = "Username";
             // 
             // txtUserName
@@ -52,7 +52,7 @@
             this.txtUserName.MaxLength = 16;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(98, 22);
-            this.txtUserName.TabIndex = 7;
+            this.txtUserName.TabIndex = 0;
             // 
             // lblPassword
             // 
@@ -60,7 +60,7 @@
             this.lblPassword.Location = new System.Drawing.Point(288, 163);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(67, 16);
-            this.lblPassword.TabIndex = 8;
+            this.lblPassword.TabIndex = 5;
             this.lblPassword.Text = "Password";
             // 
             // txtPassword
@@ -70,14 +70,14 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(98, 22);
-            this.txtPassword.TabIndex = 9;
+            this.txtPassword.TabIndex = 1;
             // 
             // btnRegisterAndLogin
             // 
             this.btnRegisterAndLogin.Location = new System.Drawing.Point(291, 282);
             this.btnRegisterAndLogin.Name = "btnRegisterAndLogin";
             this.btnRegisterAndLogin.Size = new System.Drawing.Size(216, 23);
-            this.btnRegisterAndLogin.TabIndex = 11;
+            this.btnRegisterAndLogin.TabIndex = 3;
             this.btnRegisterAndLogin.Text = "Register and back Log In";
             this.btnRegisterAndLogin.UseVisualStyleBackColor = true;
             this.btnRegisterAndLogin.Click += new System.EventHandler(this.btnRegisterAndLogin_Click);
@@ -89,7 +89,7 @@
             this.txtRepeatPassword.Name = "txtRepeatPassword";
             this.txtRepeatPassword.PasswordChar = '*';
             this.txtRepeatPassword.Size = new System.Drawing.Size(98, 22);
-            this.txtRepeatPassword.TabIndex = 13;
+            this.txtRepeatPassword.TabIndex = 2;
             // 
             // lblRepeatPassword
             // 
@@ -97,7 +97,7 @@
             this.lblRepeatPassword.Location = new System.Drawing.Point(288, 218);
             this.lblRepeatPassword.Name = "lblRepeatPassword";
             this.lblRepeatPassword.Size = new System.Drawing.Size(115, 16);
-            this.lblRepeatPassword.TabIndex = 12;
+            this.lblRepeatPassword.TabIndex = 6;
             this.lblRepeatPassword.Text = "Repeat Password";
             // 
             // RegisterForm
