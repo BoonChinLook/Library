@@ -33,13 +33,21 @@ namespace Library.Forms
             if (!pwReCheck)
                 errorMessage += "The password and the confirmation password must match. ";
             if (loginCheck && pwCheck && pwReCheck) 
-            { 
-                var newUser = new User(txtUserName.Text, txtPassword.Text);
-                //Adding a new user to the database will continue once Reshma creates the users table
-                var frm = new Form2();
-                frm.Closed += (s, args) => this.Close();
-                this.Hide();
-                frm.Show();
+            {
+                if (LibraryContext.Db.Users.Where(v => v.Name == txtUserName.Text).FirstOrDefault() != null)
+                {
+                    MessageBox.Show($"User with name {txtUserName.Text} already exists!");
+                }
+                else
+                {
+                    var newUser = new User { Name = txtUserName.Text, Password = txtPassword.Text };
+                    LibraryContext.Db.Users.Add(newUser);
+                    LibraryContext.Db.SaveChanges();
+                    var frm = new LoginForm();
+                    frm.Closed += (s, args) => this.Close();
+                    this.Hide();
+                    frm.Show();
+                }
             }
             else
             {

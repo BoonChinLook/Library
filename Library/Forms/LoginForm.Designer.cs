@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.lblUsername = new System.Windows.Forms.Label();
-            this.txtLogin = new System.Windows.Forms.TextBox();
-            this.textPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
@@ -45,22 +45,22 @@
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Username";
             // 
-            // txtLogin
+            // txtUsername
             // 
-            this.txtLogin.Location = new System.Drawing.Point(360, 147);
-            this.txtLogin.MaxLength = 16;
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(100, 22);
-            this.txtLogin.TabIndex = 1;
+            this.txtUsername.Location = new System.Drawing.Point(360, 147);
+            this.txtUsername.MaxLength = 16;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(100, 22);
+            this.txtUsername.TabIndex = 1;
             // 
-            // textPassword
+            // txtPassword
             // 
-            this.textPassword.Location = new System.Drawing.Point(360, 199);
-            this.textPassword.MaxLength = 16;
-            this.textPassword.Name = "textPassword";
-            this.textPassword.PasswordChar = '*';
-            this.textPassword.Size = new System.Drawing.Size(100, 22);
-            this.textPassword.TabIndex = 3;
+            this.txtPassword.Location = new System.Drawing.Point(360, 199);
+            this.txtPassword.MaxLength = 16;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(100, 22);
+            this.txtPassword.TabIndex = 3;
             // 
             // lblPassword
             // 
@@ -98,9 +98,9 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.textPassword);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.txtLogin);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblUsername);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
@@ -112,8 +112,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.TextBox txtLogin;
-        private System.Windows.Forms.TextBox textPassword;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnRegister;

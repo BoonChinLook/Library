@@ -1,4 +1,5 @@
 ﻿using Library.Forms;
+using Library.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,11 +20,27 @@ namespace Library
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //Comparing the entered information with the database will proceed once Reshma creates the users table.
-            var frm = new Form2();
-            frm.Closed += (s, args) => this.Close();
-            this.Hide();
-            frm.Show();
+            if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text))
+                MessageBox.Show("Enter Login & Password");
+            else
+            {
+                var foundUser = LibraryContext.Db.Users.Where(v => v.Name == txtUsername.Text).FirstOrDefault();
+                if (foundUser == null)
+                    MessageBox.Show("Login is not exists!");
+                else
+                {
+                    if (foundUser.Password != txtPassword.Text)
+                        MessageBox.Show("Wrong Password!");
+                    else
+                    {
+                        User.CurrentUser = foundUser;
+                        var frm = new Form2();
+                        frm.Closed += (s, args) => this.Close();
+                        this.Hide();
+                        frm.Show();
+                    }
+                }
+            }
         }
         private void btnRegister_Click(object sender, EventArgs e)
         {

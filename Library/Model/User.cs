@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Library.Model
 {
-    internal class User
+    public class User
     {
+        [NotMapped]
+        public static User CurrentUser { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
+        public ICollection<Book> Books { get; set; }
 
-        public User() { }
-        public User(string name, string password)
-        {
-            this.Name = name;
-            this.Password = password;
-        }
     }
 }

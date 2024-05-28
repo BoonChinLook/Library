@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,16 +16,20 @@ namespace Library
         public Form2()
         {
             InitializeComponent();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            lblWelcome.Text = $"{User.CurrentUser.Name}\r\n{lblWelcome.Text}";
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            var frm = new LoginForm();
+            frm.Closed += (s, args) => this.Close();
+            this.Hide();
+            frm.Show();
         }
     }
 }

@@ -78,7 +78,7 @@
             this.btnRegisterAndLogin.Name = "btnRegisterAndLogin";
             this.btnRegisterAndLogin.Size = new System.Drawing.Size(216, 23);
             this.btnRegisterAndLogin.TabIndex = 11;
-            this.btnRegisterAndLogin.Text = "Register and Log In";
+            this.btnRegisterAndLogin.Text = "Register and back Log In";
             this.btnRegisterAndLogin.UseVisualStyleBackColor = true;
             this.btnRegisterAndLogin.Click += new System.EventHandler(this.btnRegisterAndLogin_Click);
             // 
