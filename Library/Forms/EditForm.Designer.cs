@@ -39,12 +39,13 @@
             this.txtPublishedDate = new System.Windows.Forms.TextBox();
             this.txtPublisher = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnLibraryButton = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnLibrary = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnApply = new System.Windows.Forms.Button();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnDiscard = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -152,45 +153,46 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnLibraryButton);
+            this.panel1.Controls.Add(this.btnLogout);
+            this.panel1.Controls.Add(this.btnLibrary);
             this.panel1.Location = new System.Drawing.Point(-6, -3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1164, 54);
             this.panel1.TabIndex = 18;
             // 
-            // button1
+            // btnLogout
             // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.Location = new System.Drawing.Point(97, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 33);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Log Out";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnLogout.BackColor = System.Drawing.Color.Teal;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnLogout.Location = new System.Drawing.Point(97, 15);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(135, 33);
+            this.btnLogout.TabIndex = 14;
+            this.btnLogout.Text = "Log Out";
+            this.btnLogout.UseVisualStyleBackColor = false;
             // 
-            // btnLibraryButton
+            // btnLibrary
             // 
-            this.btnLibraryButton.BackColor = System.Drawing.Color.Teal;
-            this.btnLibraryButton.FlatAppearance.BorderSize = 0;
-            this.btnLibraryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibraryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLibraryButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnLibraryButton.Location = new System.Drawing.Point(18, 9);
-            this.btnLibraryButton.Name = "btnLibraryButton";
-            this.btnLibraryButton.Size = new System.Drawing.Size(93, 39);
-            this.btnLibraryButton.TabIndex = 0;
-            this.btnLibraryButton.Text = "Library";
-            this.btnLibraryButton.UseVisualStyleBackColor = false;
+            this.btnLibrary.BackColor = System.Drawing.Color.Teal;
+            this.btnLibrary.FlatAppearance.BorderSize = 0;
+            this.btnLibrary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLibrary.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLibrary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnLibrary.Location = new System.Drawing.Point(18, 9);
+            this.btnLibrary.Name = "btnLibrary";
+            this.btnLibrary.Size = new System.Drawing.Size(93, 39);
+            this.btnLibrary.TabIndex = 13;
+            this.btnLibrary.Text = "Library";
+            this.btnLibrary.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel2.Controls.Add(this.btnSubmit);
+            this.panel2.Controls.Add(this.btnDiscard);
+            this.panel2.Controls.Add(this.btnApply);
             this.panel2.Controls.Add(this.txtTitle);
             this.panel2.Controls.Add(this.lblTitle);
             this.panel2.Controls.Add(this.lblAuthor);
@@ -208,20 +210,20 @@
             this.panel2.Size = new System.Drawing.Size(1164, 483);
             this.panel2.TabIndex = 19;
             // 
-            // btnSubmit
+            // btnApply
             // 
-            this.btnSubmit.BackColor = System.Drawing.Color.Teal;
-            this.btnSubmit.FlatAppearance.BorderSize = 0;
-            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnSubmit.Location = new System.Drawing.Point(521, 327);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(225, 45);
-            this.btnSubmit.TabIndex = 12;
-            this.btnSubmit.Text = "Apply changes";
-            this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnApply.BackColor = System.Drawing.Color.Teal;
+            this.btnApply.FlatAppearance.BorderSize = 0;
+            this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApply.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnApply.Location = new System.Drawing.Point(354, 313);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(163, 45);
+            this.btnApply.TabIndex = 12;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = false;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // txtTitle
             // 
@@ -241,6 +243,21 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Title";
             // 
+            // btnDiscard
+            // 
+            this.btnDiscard.BackColor = System.Drawing.Color.Teal;
+            this.btnDiscard.FlatAppearance.BorderSize = 0;
+            this.btnDiscard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiscard.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDiscard.Location = new System.Drawing.Point(600, 313);
+            this.btnDiscard.Name = "btnDiscard";
+            this.btnDiscard.Size = new System.Drawing.Size(160, 45);
+            this.btnDiscard.TabIndex = 13;
+            this.btnDiscard.Text = "Discard";
+            this.btnDiscard.UseVisualStyleBackColor = false;
+            this.btnDiscard.Click += new System.EventHandler(this.btnDiscard_Click);
+            // 
             // EditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -250,7 +267,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditForm";
-            this.Text = "Form1";
+            this.Text = "EditForm";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -275,9 +292,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Button btnLibraryButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.Button btnLibrary;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnDiscard;
     }
 }
 

@@ -27,7 +27,7 @@ namespace Library
             txtPublishedDate.Text = currentBook.PublishedDate;
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void btnApply_Click(object sender, EventArgs e)
         {
             var errorMessage = "";
             var titleCheck = string.IsNullOrEmpty(txtTitle.Text);
@@ -43,29 +43,37 @@ namespace Library
             {
                 if (LibraryContext.Db.Books.FirstOrDefault(v => v.Title == txtTitle.Text) != null)
                     MessageBox.Show($"Book with name {txtTitle.Text} already exists!");
-                else
-                {
-                    var newBook = new Book
-                    {
-                        Id = currentBook.Id,
-                        User = currentBook.User,
-                        Title = txtTitle.Text,
-                        Author = txtAuthor.Text,
-                        Genre = txtGenre.Text,
-                        Description = txtDescription.Text,
-                        Publisher = txtPublisher.Text,
-                        PublishedDate = txtPublishedDate.Text
-                    };
-                    var origBook = LibraryContext.Db.Books.First(v => v.Id == currentBook.Id);
-                    LibraryContext.Db.Entry(origBook).CurrentValues.SetValues(newBook);
-                    LibraryContext.Db.SaveChanges();
-                    MessageBox.Show($"Book {txtTitle.Text} successfully edited!");
-                    var frm = new BookListForm();
-                    frm.Closed += (s, args) => this.Close();
-                    this.Hide();
-                    frm.Show();
-                }
             }
+            else
+            {
+                var newBook = new Book
+                {
+                    Id = currentBook.Id,
+                    User = currentBook.User,
+                    Title = txtTitle.Text,
+                    Author = txtAuthor.Text,
+                    Genre = txtGenre.Text,
+                    Description = txtDescription.Text,
+                    Publisher = txtPublisher.Text,
+                    PublishedDate = txtPublishedDate.Text
+                };
+                var origBook = LibraryContext.Db.Books.First(v => v.Id == currentBook.Id);
+                LibraryContext.Db.Entry(origBook).CurrentValues.SetValues(newBook);
+                LibraryContext.Db.SaveChanges();
+                MessageBox.Show($"Book {txtTitle.Text} successfully edited!");
+                var frm = new BookListForm();
+                frm.Closed += (s, args) => this.Close();
+                this.Hide();
+                frm.Show();
+            }
+        }
+
+        private void btnDiscard_Click(object sender, EventArgs e)
+        {
+            var frm = new BookListForm();
+            frm.Closed += (s, args) => this.Close();
+            this.Hide();
+            frm.Show();
         }
     }
 }
