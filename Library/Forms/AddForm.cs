@@ -33,30 +33,27 @@ namespace Library
             {
                 if (LibraryContext.Db.Books.FirstOrDefault(v => v.Title == txtTitle.Text) != null)
                     MessageBox.Show($"Book with name {txtTitle.Text} already exists!");
+                else
+                {
+                    var newBook = new Book
+                    {
+                        User = User.CurrentUser,
+                        Title = txtTitle.Text,
+                        Author = txtAuthor.Text,
+                        Genre = txtGenre.Text,
+                        Description = txtDescription.Text,
+                        Publisher = txtPublisher.Text,
+                        PublishedDate = txtPublishedDate.Text
+                    };
+                    LibraryContext.Db.Books.Add(newBook);
+                    LibraryContext.Db.SaveChanges();
+                    MessageBox.Show($"Book {txtTitle.Text} successfully added!");
+                    var frm = new BookListForm();
+                    frm.Closed += (s, args) => this.Close();
+                    this.Hide();
+                    frm.Show();
+                }
             }
-            else 
-            {
-                var newBook = new Book 
-                { 
-                    User = User.CurrentUser, 
-                    Title = txtTitle.Text, 
-                    Author = txtAuthor.Text, 
-                    Genre = txtGenre.Text, 
-                    Description = txtDescription.Text,
-                    Publisher = txtPublisher.Text,
-                    PublishedDate = txtPublishedDate.Text
-                };
-                LibraryContext.Db.Books.Add(newBook);
-                LibraryContext.Db.SaveChanges();
-                MessageBox.Show($"Book {txtTitle.Text} successfully added!");
-                var frm = new BookListForm();
-                frm.Closed += (s, args) => this.Close();
-                this.Hide();
-                frm.Show();
-            }
-
         }
-
-
     }
 }

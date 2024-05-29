@@ -217,9 +217,9 @@
             this.btnSubmit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSubmit.Location = new System.Drawing.Point(521, 327);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(123, 45);
+            this.btnSubmit.Size = new System.Drawing.Size(225, 45);
             this.btnSubmit.TabIndex = 12;
-            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.Text = "Apply changes";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
