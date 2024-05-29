@@ -31,5 +31,10 @@ namespace Library
             this.Hide();
             frm.Show();
         }
+
+        private void libraryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -116,13 +116,13 @@
             // lblTotalUsers
             // 
             this.lblTotalUsers.AutoSize = true;
-            this.lblTotalUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblTotalUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblTotalUsers.ForeColor = System.Drawing.Color.Teal;
             this.lblTotalUsers.Image = ((System.Drawing.Image)(resources.GetObject("lblTotalUsers.Image")));
             this.lblTotalUsers.Location = new System.Drawing.Point(460, 15);
             this.lblTotalUsers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalUsers.Name = "lblTotalUsers";
-            this.lblTotalUsers.Size = new System.Drawing.Size(91, 17);
+            this.lblTotalUsers.Size = new System.Drawing.Size(105, 17);
             this.lblTotalUsers.TabIndex = 6;
             this.lblTotalUsers.Text = "Total  users: ";
             this.lblTotalUsers.Click += new System.EventHandler(this.lblTotalUsers_Click);
