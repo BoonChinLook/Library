@@ -19,11 +19,6 @@ namespace Library
             lblWelcome.Text = $"{User.CurrentUser.Name}\r\n{lblWelcome.Text}";
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLogout_Click(object sender, EventArgs e)
         {
             var frm = new LoginForm();
@@ -32,20 +27,19 @@ namespace Library
             frm.Show();
         }
 
-        private void libraryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void bookListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BookListForm frm = new BookListForm();
+            frm.Closed += (s, args) => this.Close();
+            this.Hide();
             frm.Show();
         }
 
         private void addBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddForm frm = new AddForm();
+            frm.Closed += (s, args) => this.Close();
+            this.Hide();
             frm.Show();
         }
     }

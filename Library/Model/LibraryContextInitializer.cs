@@ -14,7 +14,7 @@ namespace Library.Model
         {
             if (context.Users.Count() == 0 && context.Books.Count() == 0)
             {
-                var user1 = new User { Id = 0, Name = "Adriana", Password = "Adriana" };
+                var user1 = new User { Id = 1, Name = "Adriana", Password = "Adriana" };
                 var user2 = new User { Id = 2, Name = "Aliona", Password = "Aliona" };
                 var user3 = new User { Id = 3, Name = "Anton", Password = "Anton" };
                 var user4 = new User { Id = 4, Name = "Ola", Password = "Ola" };
