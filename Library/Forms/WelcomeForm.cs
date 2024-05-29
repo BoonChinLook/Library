@@ -36,5 +36,17 @@ namespace Library
         {
 
         }
+
+        private void bookListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BookListForm frm = new BookListForm();
+            frm.Show();
+        }
+
+        private void addBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddForm frm = new AddForm();
+            frm.Show();
+        }
     }
 }
