@@ -125,7 +125,7 @@ namespace Library
             this.lblTotalUsers.Size = new System.Drawing.Size(105, 17);
             this.lblTotalUsers.Size = new System.Drawing.Size(108, 20);
             this.lblTotalUsers.TabIndex = 6;
-            this.lblTotalUsers.Text = $"Total  users: ";
+            this.lblTotalUsers.Text = "Total  users: ";
             // 
             // panelImage
             // 

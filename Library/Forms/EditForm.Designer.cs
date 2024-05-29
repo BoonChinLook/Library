@@ -1,6 +1,6 @@
 ﻿namespace Library
 {
-    partial class AddForm
+    partial class EditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnLibraryButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -190,7 +190,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Controls.Add(this.btnSubmit);
             this.panel2.Controls.Add(this.txtTitle);
             this.panel2.Controls.Add(this.lblTitle);
             this.panel2.Controls.Add(this.lblAuthor);
@@ -208,20 +208,20 @@
             this.panel2.Size = new System.Drawing.Size(1164, 483);
             this.panel2.TabIndex = 19;
             // 
-            // btnAdd
+            // btnSubmit
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Teal;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAdd.Location = new System.Drawing.Point(521, 327);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(123, 45);
-            this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAddbook_Click);
+            this.btnSubmit.BackColor = System.Drawing.Color.Teal;
+            this.btnSubmit.FlatAppearance.BorderSize = 0;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSubmit.Location = new System.Drawing.Point(521, 327);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(123, 45);
+            this.btnSubmit.TabIndex = 12;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // txtTitle
             // 
@@ -241,7 +241,7 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Title";
             // 
-            // AddForm
+            // EditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -249,7 +249,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "AddForm";
+            this.Name = "EditForm";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -275,7 +275,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnLibraryButton;
         private System.Windows.Forms.Button button1;
     }
