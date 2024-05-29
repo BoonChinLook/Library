@@ -12,9 +12,26 @@ namespace Library
 {
     public partial class AddForm : Form
     {
+        
         public AddForm()
         {
             InitializeComponent();
+            
         }
+
+       
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
+        private void btnAddbook_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        
     }
 }
