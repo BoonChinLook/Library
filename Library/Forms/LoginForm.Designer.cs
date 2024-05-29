@@ -122,11 +122,8 @@ namespace Library
             this.lblTotalUsers.Image = ((System.Drawing.Image)(resources.GetObject("lblTotalUsers.Image")));
             this.lblTotalUsers.Location = new System.Drawing.Point(613, 18);
             this.lblTotalUsers.Name = "lblTotalUsers";
-<<<<<<< HEAD
             this.lblTotalUsers.Size = new System.Drawing.Size(105, 17);
-=======
             this.lblTotalUsers.Size = new System.Drawing.Size(108, 20);
->>>>>>> 680fee368838cb46c11dbda28e0f2abd183f2edf
             this.lblTotalUsers.TabIndex = 6;
             this.lblTotalUsers.Text = $"Total  users: ";
             // 
