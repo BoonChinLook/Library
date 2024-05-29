@@ -12,12 +12,22 @@ using System.Windows.Forms;
 
 namespace Library
 {
-    public partial class AddForm : Form
+    public partial class EditForm : Form
     {
-        
-        public AddForm() => InitializeComponent();
-        
-        private void btnAddbook_Click(object sender, EventArgs e)
+        private Book currentBook;
+        public EditForm(Book _currentBook)
+        {
+            InitializeComponent();
+            this.currentBook = _currentBook;
+            txtTitle.Text = currentBook.Title;
+            txtAuthor.Text = currentBook.Author;
+            txtDescription.Text = currentBook.Description;
+            txtGenre.Text = currentBook.Genre;
+            txtPublisher.Text = currentBook.Publisher;
+            txtPublishedDate.Text = currentBook.PublishedDate;
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
             var errorMessage = "";
             var titleCheck = string.IsNullOrEmpty(txtTitle.Text);
@@ -29,7 +39,7 @@ namespace Library
                 errorMessage += "Enter Author.\r\n";
             if (genreCheck)
                 errorMessage += "Enter Genre.\r\n";
-            if (!titleCheck && !authorCheck && !genreCheck)
+            if (titleCheck && authorCheck && genreCheck)
             {
                 if (LibraryContext.Db.Books.FirstOrDefault(v => v.Title == txtTitle.Text) != null)
                     MessageBox.Show($"Book with name {txtTitle.Text} already exists!");
@@ -37,7 +47,8 @@ namespace Library
                 {
                     var newBook = new Book
                     {
-                        User = User.CurrentUser,
+                        Id = currentBook.Id,
+                        User = currentBook.User,
                         Title = txtTitle.Text,
                         Author = txtAuthor.Text,
                         Genre = txtGenre.Text,
@@ -45,9 +56,10 @@ namespace Library
                         Publisher = txtPublisher.Text,
                         PublishedDate = txtPublishedDate.Text
                     };
-                    LibraryContext.Db.Books.Add(newBook);
+                    var origBook = LibraryContext.Db.Books.First(v => v.Id == currentBook.Id);
+                    LibraryContext.Db.Entry(origBook).CurrentValues.SetValues(newBook);
                     LibraryContext.Db.SaveChanges();
-                    MessageBox.Show($"Book {txtTitle.Text} successfully added!");
+                    MessageBox.Show($"Book {txtTitle.Text} successfully edited!");
                     var frm = new BookListForm();
                     frm.Closed += (s, args) => this.Close();
                     this.Hide();

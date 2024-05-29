@@ -117,14 +117,14 @@ namespace Library
             // lblTotalUsers
             // 
             this.lblTotalUsers.AutoSize = true;
-            this.lblTotalUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblTotalUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblTotalUsers.ForeColor = System.Drawing.Color.Teal;
             this.lblTotalUsers.Image = ((System.Drawing.Image)(resources.GetObject("lblTotalUsers.Image")));
             this.lblTotalUsers.Location = new System.Drawing.Point(613, 18);
             this.lblTotalUsers.Name = "lblTotalUsers";
             this.lblTotalUsers.Size = new System.Drawing.Size(108, 20);
             this.lblTotalUsers.TabIndex = 6;
-            this.lblTotalUsers.Text = $"Total  users: ";
+            this.lblTotalUsers.Text = "Total  users: ";
             // 
             // panelImage
             // 

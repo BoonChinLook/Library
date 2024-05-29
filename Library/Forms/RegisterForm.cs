@@ -27,11 +27,11 @@ namespace Library.Forms
             var pwReCheck = txtPassword.Text == txtRepeatPassword.Text;
             var errorMessage = "";
             if (!loginCheck)
-                errorMessage += "The username must contain only letters or digits and be at least 3 characters long. ";
+                errorMessage += "The username must contain only letters or digits and be at least 3 characters long.\r\n";
             if (!pwCheck)
-                errorMessage += "The password must contain at least one capital letter and one digit, and be at least 8 characters long. ";
+                errorMessage += "The password must contain at least one capital letter and one digit, and be at least 8 characters long.\r\n";
             if (!pwReCheck)
-                errorMessage += "The password and the confirmation password must match. ";
+                errorMessage += "The password and the confirmation password must match.";
             if (loginCheck && pwCheck && pwReCheck) 
             {
                 if (LibraryContext.Db.Users.FirstOrDefault(v => v.Name == txtUserName.Text) != null)
