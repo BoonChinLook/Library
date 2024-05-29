@@ -12,11 +12,11 @@ namespace Library
 {
     public partial class Form1 : Form
     {
-        private BookRepository _bookRepository;
+        
         public Form1()
         {
             InitializeComponent();
-            _bookRepository = new BookRepository();
+            
         }
 
        
@@ -29,19 +29,7 @@ namespace Library
         
         private void btnAddbook_Click(object sender, EventArgs e)
         {
-            string title = txtTitle.Text;
-            string author = txtAuthor.Text;
-
-            Book book = new Book
-            { 
-                Title = title,
-                Author = author,
-            };
-            _bookRepository.AddBook(book);
-
-            // Optionally, show a confirmation message
-            MessageBox.Show("Book added successfully!");
-
+           
         }
 
         
