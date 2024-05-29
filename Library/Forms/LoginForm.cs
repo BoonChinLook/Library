@@ -18,7 +18,6 @@ namespace Library
         {
             InitializeComponent();
             lblTotalUsers.Text += LibraryContext.Db.Users.Count();
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -50,21 +49,6 @@ namespace Library
             frm.Closed += (s, args) => this.Close();
             this.Hide();
             frm.Show();
-        }
-
-        private void panelImage_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTotalUsers_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
