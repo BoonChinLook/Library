@@ -11,12 +11,16 @@ using System.Data.SqlClient;
 using Library.Forms;
 using Library.Model;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
+using System.IO;
 
 namespace Library
 {
     public partial class BookListForm : Form
     {
         private List<Book> books;
+        private string fileDialogFilter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+        private List<Record> recordsList = new List<Record>();
+
         public BookListForm() => InitializeComponent();
 
         private void BookListForm_Load(object sender, EventArgs e)
@@ -70,5 +74,62 @@ namespace Library
             this.Hide();
             frm.Show();
         }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog fileChooser = new SaveFileDialog();
+            fileChooser.Filter = fileDialogFilter;
+            fileChooser.RestoreDirectory = true;
+            DialogResult result = fileChooser.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+                string csvfileName = fileChooser.FileName;
+                SaveCSVFile(csvfileName);
+            }
+        }
+
+
+        private void SaveCSVFile(string csvFileName)
+        {
+            if (string.IsNullOrEmpty(csvFileName))
+            {
+                MessageBox.Show("Invalid file name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                using (FileStream csvOutput = new FileStream(csvFileName, FileMode.Create, FileAccess.Write))
+                using (StreamWriter csvfileWriter = new StreamWriter(csvOutput))
+                {
+                    // Write CSV header
+                    csvfileWriter.WriteLine("Title,Author,Genre,Description,Published Date,Publisher");
+
+                    // Fetch books from the database and convert them to Record objects
+                    var books = LibraryContext.Db.Books.ToList(); // Assuming LibraryContext.Db.Books is your DbSet<Book>
+                    foreach (var book in books)
+                    {
+                        var record = new Record
+                        {
+                            Title = book.Title,
+                            Author = book.Author,
+                            Genre = book.Genre,
+                            BookDescription = book.Description,
+                            DatePublished = book.PublishedDate,
+                            Publisher = book.Publisher
+                        };
+                        csvfileWriter.WriteLine($"{record.Title},{record.Author},{record.Genre},{record.BookDescription},{record.DatePublished},{record.Publisher}");
+                    }
+                }
+
+                MessageBox.Show("File saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while saving the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
+       
