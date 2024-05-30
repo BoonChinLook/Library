@@ -32,6 +32,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.bookListGridView = new System.Windows.Forms.DataGridView();
+            this.btnHome = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookListGridView)).BeginInit();
             this.SuspendLayout();
@@ -39,20 +40,21 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnExport);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(752, 39);
+            this.panel1.Size = new System.Drawing.Size(1003, 48);
             this.panel1.TabIndex = 0;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(22, 11);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Location = new System.Drawing.Point(114, 11);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(56, 19);
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -64,10 +66,10 @@
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnExport.Location = new System.Drawing.Point(664, 2);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExport.Location = new System.Drawing.Point(885, 2);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(86, 34);
+            this.btnExport.Size = new System.Drawing.Size(115, 42);
             this.btnExport.TabIndex = 0;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
@@ -77,23 +79,34 @@
             // 
             this.bookListGridView.AllowUserToAddRows = false;
             this.bookListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bookListGridView.Location = new System.Drawing.Point(0, 44);
-            this.bookListGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.bookListGridView.Location = new System.Drawing.Point(0, 54);
+            this.bookListGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bookListGridView.Name = "bookListGridView";
             this.bookListGridView.RowHeadersWidth = 51;
             this.bookListGridView.RowTemplate.Height = 24;
-            this.bookListGridView.Size = new System.Drawing.Size(749, 320);
+            this.bookListGridView.Size = new System.Drawing.Size(999, 394);
             this.bookListGridView.TabIndex = 1;
             this.bookListGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookListGridView_CellContentClick);
             // 
+            // btnHome
+            // 
+            this.btnHome.Location = new System.Drawing.Point(23, 11);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(75, 21);
+            this.btnHome.TabIndex = 2;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
             // BookListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 366);
+            this.ClientSize = new System.Drawing.Size(1000, 450);
             this.Controls.Add(this.bookListGridView);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BookListForm";
             this.Text = "BookListForm";
             this.Load += new System.EventHandler(this.BookListForm_Load);
@@ -109,5 +122,6 @@
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.DataGridView bookListGridView;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnHome;
     }
 }

@@ -69,7 +69,7 @@ namespace Library
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AddForm frm = new AddForm();
+            var frm = new AddForm();
             frm.Closed += (s, args) => this.Close();
             this.Hide();
             frm.Show();
@@ -129,6 +129,14 @@ namespace Library
             {
                 MessageBox.Show($"An error occurred while saving the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            var frm = new WelcomeForm();
+            frm.Closed += (s, args) => this.Close();
+            this.Hide();
+            frm.Show();
         }
     }
 }
