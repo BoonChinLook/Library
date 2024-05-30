@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\LibraryContextInitializer.cs" />
+    <Compile Include="Model\Record.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
