@@ -107,7 +107,7 @@ namespace Library
                     csvfileWriter.WriteLine("Title,Author,Genre,Description,Published Date,Publisher");
 
                     // Fetch books from the database and convert them to Record objects
-                    var books = LibraryContext.Db.Books.ToList(); // Assuming LibraryContext.Db.Books is your DbSet<Book>
+                    var books = LibraryContext.Db.Books.Where(v => v.User.Id == User.CurrentUser.Id).ToList();
                     foreach (var book in books)
                     {
                         var record = new Record
