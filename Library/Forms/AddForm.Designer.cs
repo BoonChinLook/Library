@@ -172,6 +172,7 @@
             this.btnLogout.TabIndex = 14;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnLibrary
             // 
@@ -186,6 +187,7 @@
             this.btnLibrary.TabIndex = 13;
             this.btnLibrary.Text = "Library";
             this.btnLibrary.UseVisualStyleBackColor = false;
+            this.btnLibrary.Click += new System.EventHandler(this.btnLibrary_Click);
             // 
             // panel2
             // 
