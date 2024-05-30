@@ -42,7 +42,7 @@
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnExport);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(752, 39);
             this.panel1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(22, 11);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(56, 19);
             this.btnAdd.TabIndex = 1;
@@ -65,7 +65,7 @@
             this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnExport.Location = new System.Drawing.Point(664, 2);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(2);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(86, 34);
             this.btnExport.TabIndex = 0;
@@ -78,7 +78,7 @@
             this.bookListGridView.AllowUserToAddRows = false;
             this.bookListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bookListGridView.Location = new System.Drawing.Point(0, 44);
-            this.bookListGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bookListGridView.Margin = new System.Windows.Forms.Padding(2);
             this.bookListGridView.Name = "bookListGridView";
             this.bookListGridView.RowHeadersWidth = 51;
             this.bookListGridView.RowTemplate.Height = 24;
@@ -93,9 +93,9 @@
             this.ClientSize = new System.Drawing.Size(750, 366);
             this.Controls.Add(this.bookListGridView);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BookListForm";
-            this.Text = "Form1";
+            this.Text = "BookListForm";
             this.Load += new System.EventHandler(this.BookListForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bookListGridView)).EndInit();

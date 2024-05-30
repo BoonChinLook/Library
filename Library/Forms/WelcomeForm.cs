@@ -42,5 +42,10 @@ namespace Library
             this.Hide();
             frm.Show();
         }
+
+        private void WelcomeForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
