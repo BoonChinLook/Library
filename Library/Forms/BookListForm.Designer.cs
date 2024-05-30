@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnHome = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.bookListGridView = new System.Windows.Forms.DataGridView();
-            this.btnHome = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookListGridView)).BeginInit();
             this.SuspendLayout();
@@ -49,12 +49,31 @@
             this.panel1.Size = new System.Drawing.Size(1003, 48);
             this.panel1.TabIndex = 0;
             // 
+            // btnHome
+            // 
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnHome.Location = new System.Drawing.Point(23, 2);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(115, 42);
+            this.btnHome.TabIndex = 2;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(114, 11);
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAdd.Location = new System.Drawing.Point(144, 2);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(115, 42);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -87,17 +106,6 @@
             this.bookListGridView.Size = new System.Drawing.Size(999, 394);
             this.bookListGridView.TabIndex = 1;
             this.bookListGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookListGridView_CellContentClick);
-            // 
-            // btnHome
-            // 
-            this.btnHome.Location = new System.Drawing.Point(23, 11);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(75, 21);
-            this.btnHome.TabIndex = 2;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // BookListForm
             // 

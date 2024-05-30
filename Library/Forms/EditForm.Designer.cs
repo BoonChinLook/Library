@@ -42,10 +42,10 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnLibrary = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDiscard = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btnDiscard = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -167,7 +167,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnLogout.Location = new System.Drawing.Point(97, 15);
+            this.btnLogout.Location = new System.Drawing.Point(109, 12);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(135, 33);
             this.btnLogout.TabIndex = 14;
@@ -210,6 +210,21 @@
             this.panel2.Size = new System.Drawing.Size(1164, 483);
             this.panel2.TabIndex = 19;
             // 
+            // btnDiscard
+            // 
+            this.btnDiscard.BackColor = System.Drawing.Color.Teal;
+            this.btnDiscard.FlatAppearance.BorderSize = 0;
+            this.btnDiscard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiscard.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDiscard.Location = new System.Drawing.Point(600, 313);
+            this.btnDiscard.Name = "btnDiscard";
+            this.btnDiscard.Size = new System.Drawing.Size(160, 45);
+            this.btnDiscard.TabIndex = 13;
+            this.btnDiscard.Text = "Discard";
+            this.btnDiscard.UseVisualStyleBackColor = false;
+            this.btnDiscard.Click += new System.EventHandler(this.btnDiscard_Click);
+            // 
             // btnApply
             // 
             this.btnApply.BackColor = System.Drawing.Color.Teal;
@@ -242,21 +257,6 @@
             this.lblTitle.Size = new System.Drawing.Size(49, 25);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Title";
-            // 
-            // btnDiscard
-            // 
-            this.btnDiscard.BackColor = System.Drawing.Color.Teal;
-            this.btnDiscard.FlatAppearance.BorderSize = 0;
-            this.btnDiscard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDiscard.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDiscard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnDiscard.Location = new System.Drawing.Point(600, 313);
-            this.btnDiscard.Name = "btnDiscard";
-            this.btnDiscard.Size = new System.Drawing.Size(160, 45);
-            this.btnDiscard.TabIndex = 13;
-            this.btnDiscard.Text = "Discard";
-            this.btnDiscard.UseVisualStyleBackColor = false;
-            this.btnDiscard.Click += new System.EventHandler(this.btnDiscard_Click);
             // 
             // EditForm
             // 
