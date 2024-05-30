@@ -77,18 +77,13 @@ namespace Library
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            SaveFileDialog fileChooser = new SaveFileDialog();
+            var fileChooser = new SaveFileDialog();
             fileChooser.Filter = fileDialogFilter;
             fileChooser.RestoreDirectory = true;
-            DialogResult result = fileChooser.ShowDialog();
-
+            var result = fileChooser.ShowDialog();
             if(result == DialogResult.OK)
-            {
-                string csvfileName = fileChooser.FileName;
-                SaveCSVFile(csvfileName);
-            }
+                SaveCSVFile(fileChooser.FileName);
         }
-
 
         private void SaveCSVFile(string csvFileName)
         {
@@ -97,32 +92,15 @@ namespace Library
                 MessageBox.Show("Invalid file name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             try
             {
                 using (FileStream csvOutput = new FileStream(csvFileName, FileMode.Create, FileAccess.Write))
                 using (StreamWriter csvfileWriter = new StreamWriter(csvOutput))
                 {
-                    // Write CSV header
                     csvfileWriter.WriteLine("Title,Author,Genre,Description,Published Date,Publisher");
-
-                    // Fetch books from the database and convert them to Record objects
-                    var books = LibraryContext.Db.Books.Where(v => v.User.Id == User.CurrentUser.Id).ToList();
                     foreach (var book in books)
-                    {
-                        var record = new Record
-                        {
-                            Title = book.Title,
-                            Author = book.Author,
-                            Genre = book.Genre,
-                            BookDescription = book.Description,
-                            DatePublished = book.PublishedDate,
-                            Publisher = book.Publisher
-                        };
-                        csvfileWriter.WriteLine($"{record.Title},{record.Author},{record.Genre},{record.BookDescription},{record.DatePublished},{record.Publisher}");
-                    }
+                        csvfileWriter.WriteLine($"{book.Title},{book.Author},{book.Genre},{book.Description},{book.PublishedDate},{book.Publisher}");
                 }
-
                 MessageBox.Show("File saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
