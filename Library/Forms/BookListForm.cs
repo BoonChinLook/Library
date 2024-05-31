@@ -12,6 +12,7 @@ using Library.Forms;
 using Library.Model;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.IO;
+using static System.Net.WebRequestMethods;
 
 namespace Library
 {
@@ -19,14 +20,12 @@ namespace Library
     {
         private List<Book> books;
         private string fileDialogFilter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
-        private List<Record> recordsList = new List<Record>();
 
         public BookListForm() => InitializeComponent();
 
         private void BookListForm_Load(object sender, EventArgs e)
         {
             books = LibraryContext.Db.Books.Where(v => v.User.Id == User.CurrentUser.Id).ToList();
-            bookListGridView.DataSource = books.Select(x => new { x.Title, x.Author, x.Publisher }).ToList();
             var editButtonColumn = new DataGridViewButtonColumn
             {
                 Name = "Edit",
@@ -34,7 +33,6 @@ namespace Library
                 Text = "Edit",
                 UseColumnTextForButtonValue = true
             };
-            bookListGridView.Columns.Add(editButtonColumn);
             var deleteButtonColumn = new DataGridViewButtonColumn
             {
                 Name = "Delete",
@@ -42,7 +40,13 @@ namespace Library
                 Text = "Delete",
                 UseColumnTextForButtonValue = true
             };
+            bookListGridView.Columns.Add("Title", "Title");
+            bookListGridView.Columns.Add("Author", "Author");
+            bookListGridView.Columns.Add("Publisher", "Publisher");
+            bookListGridView.Columns.Add(editButtonColumn);
             bookListGridView.Columns.Add(deleteButtonColumn);
+            foreach (var item in books)
+                bookListGridView.Rows.Add(item.Title, item.Author, item.Publisher);
         }
 
         private void bookListGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -50,19 +54,21 @@ namespace Library
             var senderGrid = (DataGridView)sender;
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == 3 || e.ColumnIndex == 0)
+                switch (e.ColumnIndex)
                 {
-                    var frm = new EditForm(books[e.RowIndex]);
-                    frm.Closed += (s, args) => this.Close();
-                    this.Hide();
-                    frm.Show();
-                }
-                else if(e.ColumnIndex == 4 || e.ColumnIndex == 1)
-                {
-                    LibraryContext.Db.Books.Remove(books[e.RowIndex]);
-                    LibraryContext.Db.SaveChanges();
-                    books.RemoveAt(e.RowIndex);
-                    bookListGridView.DataSource = books.Select(x => new { x.Title, x.Author, x.Publisher }).ToList();
+                    case 3:
+                        var frm = new EditForm(books[e.RowIndex]);
+                        frm.Closed += (s, args) => this.Close();
+                        this.Hide();
+                        frm.Show();
+                        break;
+                    case 4:
+                        LibraryContext.Db.Books.Remove(books[e.RowIndex]);
+                        LibraryContext.Db.SaveChanges();
+                        books.RemoveAt(e.RowIndex);
+                        bookListGridView.Rows.RemoveAt(e.RowIndex);
+                        break;
+
                 }
             }
         }
@@ -77,11 +83,8 @@ namespace Library
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            var fileChooser = new SaveFileDialog();
-            fileChooser.Filter = fileDialogFilter;
-            fileChooser.RestoreDirectory = true;
-            var result = fileChooser.ShowDialog();
-            if(result == DialogResult.OK)
+            var fileChooser = new SaveFileDialog { Filter = fileDialogFilter, RestoreDirectory = true };
+            if (fileChooser.ShowDialog() == DialogResult.OK)
                 SaveCSVFile(fileChooser.FileName);
         }
 
@@ -97,9 +100,9 @@ namespace Library
                 using (FileStream csvOutput = new FileStream(csvFileName, FileMode.Create, FileAccess.Write))
                 using (StreamWriter csvfileWriter = new StreamWriter(csvOutput))
                 {
-                    csvfileWriter.WriteLine("Title,Author,Genre,Description,Published Date,Publisher");
+                    csvfileWriter.WriteLine("Title;Author;Genre;Description;Published;Date;Publisher");
                     foreach (var book in books)
-                        csvfileWriter.WriteLine($"{book.Title},{book.Author},{book.Genre},{book.Description},{book.PublishedDate},{book.Publisher}");
+                        csvfileWriter.WriteLine($"{book.Title.Replace(';', ',')};{book.Author.Replace(';', ',')};{book.Genre.Replace(';', ',')};{book.Description.Replace(';', ',')};{book.PublishedDate.Replace(';', ',')};{book.Publisher.Replace(';', ',')}");
                 }
                 MessageBox.Show("File saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -118,4 +121,3 @@ namespace Library
         }
     }
 }
-       
