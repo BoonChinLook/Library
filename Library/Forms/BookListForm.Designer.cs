@@ -105,6 +105,7 @@
             this.bookListGridView.RowTemplate.Height = 24;
             this.bookListGridView.Size = new System.Drawing.Size(999, 394);
             this.bookListGridView.TabIndex = 1;
+            this.bookListGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.bookListGridView_CellBeginEdit);
             this.bookListGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookListGridView_CellContentClick);
             // 
             // BookListForm

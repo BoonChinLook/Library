@@ -19,8 +19,6 @@ namespace Library
     public partial class BookListForm : Form
     {
         private List<Book> books;
-        private string fileDialogFilter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
-
         public BookListForm() => InitializeComponent();
 
         private void BookListForm_Load(object sender, EventArgs e)
@@ -63,12 +61,14 @@ namespace Library
                         frm.Show();
                         break;
                     case 4:
-                        LibraryContext.Db.Books.Remove(books[e.RowIndex]);
+                        var currentRowName = bookListGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        var currentRowAuthor = bookListGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                        var currentBook = books.First(v => v.Title == currentRowName && v.Author == currentRowAuthor);
+                        LibraryContext.Db.Books.Remove(currentBook);
                         LibraryContext.Db.SaveChanges();
-                        books.RemoveAt(e.RowIndex);
+                        books.Remove(currentBook);
                         bookListGridView.Rows.RemoveAt(e.RowIndex);
                         break;
-
                 }
             }
         }
@@ -83,32 +83,29 @@ namespace Library
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            var fileChooser = new SaveFileDialog { Filter = fileDialogFilter, RestoreDirectory = true };
+            var fileChooser = new SaveFileDialog { Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*", RestoreDirectory = true };
             if (fileChooser.ShowDialog() == DialogResult.OK)
-                SaveCSVFile(fileChooser.FileName);
-        }
-
-        private void SaveCSVFile(string csvFileName)
-        {
-            if (string.IsNullOrEmpty(csvFileName))
             {
-                MessageBox.Show("Invalid file name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            try
-            {
-                using (FileStream csvOutput = new FileStream(csvFileName, FileMode.Create, FileAccess.Write))
-                using (StreamWriter csvfileWriter = new StreamWriter(csvOutput))
+                if (string.IsNullOrEmpty(fileChooser.FileName))
                 {
-                    csvfileWriter.WriteLine("Title;Author;Genre;Description;Published;Date;Publisher");
-                    foreach (var book in books)
-                        csvfileWriter.WriteLine($"{book.Title.Replace(';', ',')};{book.Author.Replace(';', ',')};{book.Genre.Replace(';', ',')};{book.Description.Replace(';', ',')};{book.PublishedDate.Replace(';', ',')};{book.Publisher.Replace(';', ',')}");
+                    MessageBox.Show("Invalid file name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-                MessageBox.Show("File saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while saving the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    using (var csvOutput = new FileStream(fileChooser.FileName, FileMode.Create, FileAccess.Write))
+                    using (var csvfileWriter = new StreamWriter(csvOutput))
+                    {
+                        csvfileWriter.WriteLine("Title;Author;Genre;Description;Published;Date;Publisher");
+                        foreach (var book in books)
+                            csvfileWriter.WriteLine($"{book.Title.Replace(';', ',')};{book.Author.Replace(';', ',')};{book.Genre.Replace(';', ',')};{book.Description.Replace(';', ',')};{book.PublishedDate.Replace(';', ',')};{book.Publisher.Replace(';', ',')}");
+                    }
+                    MessageBox.Show("File saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while saving the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -119,5 +116,7 @@ namespace Library
             this.Hide();
             frm.Show();
         }
+
+        private void bookListGridView_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e) => e.Cancel = true;
     }
 }
