@@ -52,17 +52,17 @@ namespace Library
             var senderGrid = (DataGridView)sender;
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
+                var currentRowName = bookListGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                var currentRowAuthor = bookListGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
                 switch (e.ColumnIndex)
                 {
                     case 3:
-                        var frm = new EditForm(books[e.RowIndex]);
+                        var frm = new EditForm(books.First(v => v.Title == currentRowName && v.Author == currentRowAuthor));
                         frm.Closed += (s, args) => this.Close();
                         this.Hide();
                         frm.Show();
                         break;
                     case 4:
-                        var currentRowName = bookListGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                        var currentRowAuthor = bookListGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
                         var currentBook = books.First(v => v.Title == currentRowName && v.Author == currentRowAuthor);
                         LibraryContext.Db.Books.Remove(currentBook);
                         LibraryContext.Db.SaveChanges();
@@ -71,14 +71,6 @@ namespace Library
                         break;
                 }
             }
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            var frm = new AddForm();
-            frm.Closed += (s, args) => this.Close();
-            this.Hide();
-            frm.Show();
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -107,6 +99,14 @@ namespace Library
                     MessageBox.Show($"An error occurred while saving the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var frm = new AddForm();
+            frm.Closed += (s, args) => this.Close();
+            this.Hide();
+            frm.Show();
         }
 
         private void btnHome_Click(object sender, EventArgs e)

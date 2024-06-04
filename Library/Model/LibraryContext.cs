@@ -11,20 +11,13 @@ namespace Library.Forms
     public class LibraryContext : DbContext
     {
         public static LibraryContext Db { get; set; }
-
-        static LibraryContext()
-        {
-            Database.SetInitializer<LibraryContext>(new LibraryContextInitializer());
-        }
+        static LibraryContext() => Database.SetInitializer<LibraryContext>(new LibraryContextInitializer());
         public DbSet<User> Users { get; set; }
         public DbSet<Book> Books { get; set; }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Book>().HasRequired(v => v.User);
             base.OnModelCreating(modelBuilder);
         }
-
-
     }
 }

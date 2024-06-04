@@ -14,10 +14,7 @@ namespace Library.Forms
 {
     public partial class RegisterForm : Form
     {
-        public RegisterForm()
-        {
-            InitializeComponent();
-        }
+        public RegisterForm() => InitializeComponent();
 
         private void btnRegisterAndLogin_Click(object sender, EventArgs e)
         {
@@ -50,6 +47,5 @@ namespace Library.Forms
             else
                 MessageBox.Show(errorMessage);
         }
-
     }
 }
