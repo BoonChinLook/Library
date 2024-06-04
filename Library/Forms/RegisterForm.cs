@@ -18,7 +18,6 @@ namespace Library.Forms
 
         private void btnRegisterAndLogin_Click(object sender, EventArgs e)
         {
-
             var loginCheck = Regex.IsMatch(txtUserName.Text, @"^[a-zA-Z][a-zA-Z0-9]{3,16}$", RegexOptions.None);
             var pwCheck = Regex.IsMatch(txtPassword.Text, @"(?=.*\d)(?=.*[A-Z]).{8,16}", RegexOptions.None);
             var pwReCheck = txtPassword.Text == txtRepeatPassword.Text;
@@ -38,6 +37,7 @@ namespace Library.Forms
                     var newUser = new User { Name = txtUserName.Text, Password = txtPassword.Text };
                     LibraryContext.Db.Users.Add(newUser);
                     LibraryContext.Db.SaveChanges();
+                    MessageBox.Show($"User with name {txtUserName.Text} registered successfully!");
                     var frm = new LoginForm();
                     frm.Closed += (s, args) => this.Close();
                     this.Hide();
@@ -46,6 +46,14 @@ namespace Library.Forms
             }
             else
                 MessageBox.Show(errorMessage);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            var frm = new LoginForm();
+            frm.Closed += (s, args) => this.Close();
+            this.Hide();
+            frm.Show();
         }
     }
 }

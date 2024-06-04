@@ -14,19 +14,19 @@ namespace Library.Model
         {
             if (context.Users.Count() == 0 && context.Books.Count() == 0)
             {
-                var addingUsers = new User[6];
+                var addingUsers = new User[7];
                 addingUsers[0] = new User { Id = 1, Name = "Adriana", Password = "Adriana" };
                 addingUsers[1] = new User { Id = 2, Name = "Aliona", Password = "Aliona" };
                 addingUsers[2] = new User { Id = 3, Name = "Anton", Password = "Anton" };
                 addingUsers[3] = new User { Id = 4, Name = "Ola", Password = "Ola" };
                 addingUsers[4] = new User { Id = 5, Name = "Reshma", Password = "Reshma" };
                 addingUsers[5] = new User { Id = 6, Name = "Sheepy", Password = "Sheepy" };
-                context.Users.AddRange(addingUsers);
-                var addingBooks = new Book[18];
+                addingUsers[6] = new User { Id = 7, Name = "Thomas", Password = "Thomas" };
+                var addingBooks = new Book[21];
                 addingBooks[0] = new Book
                 {
                     User = addingUsers[0],
-                    Id = 0,
+                    Id = 1,
                     Title = "The Lord of the Rings",
                     Author = "JRR Tolkien",
                     Genre = "Fantasy",
@@ -37,7 +37,7 @@ namespace Library.Model
                 addingBooks[1] = new Book
                 {
                     User = addingUsers[0],
-                    Id = 1,
+                    Id = 2,
                     Title = "Pride and Prejudice",
                     Author = "Jane Austen",
                     Genre = "Romantic novel",
@@ -48,7 +48,7 @@ namespace Library.Model
                 addingBooks[2] = new Book
                 {
                     User = addingUsers[0],
-                    Id = 2,
+                    Id = 3,
                     Title = "His Dark Materials",
                     Author = "Philip Pullman",
                     Genre = "Fantasy",
@@ -59,7 +59,7 @@ namespace Library.Model
                 addingBooks[3] = new Book
                 {
                     User = addingUsers[1],
-                    Id = 3,
+                    Id = 4,
                     Title = "The Hitchhiker's Guide to the Galaxy",
                     Author = "Douglas Adams",
                     Genre = "Science Fiction",
@@ -70,7 +70,7 @@ namespace Library.Model
                 addingBooks[4] = new Book
                 {
                     User = addingUsers[1],
-                    Id = 4,
+                    Id = 5,
                     Title = "To Kill a Mockingbird",
                     Author = "Harper Lee",
                     Genre = "Southern Gothic",
@@ -81,7 +81,7 @@ namespace Library.Model
                 addingBooks[5] = new Book
                 {
                     User = addingUsers[1],
-                    Id = 5,
+                    Id = 6,
                     Title = "Winnie the Pooh",
                     Author = "A. A. Milne",
                     Genre = "Children's Literature",
@@ -92,7 +92,7 @@ namespace Library.Model
                 addingBooks[6] = new Book
                 {
                     User = addingUsers[2],
-                    Id = 6,
+                    Id = 7,
                     Title = "Wuthering Heights",
                     Author = "Emily Bronte",
                     Genre = "Gothic",
@@ -103,7 +103,7 @@ namespace Library.Model
                 addingBooks[7] = new Book
                 {
                     User = addingUsers[2],
-                    Id = 7,
+                    Id = 8,
                     Title = "Nineteen Eighty-Four",
                     Author = "George Orwell",
                     Genre = "Dystopian",
@@ -114,7 +114,7 @@ namespace Library.Model
                 addingBooks[8] = new Book
                 {
                     User = addingUsers[2],
-                    Id = 8,
+                    Id = 9,
                     Title = "The Lion, the Witch and the Wardrobe",
                     Author = "C. S. Lewis",
                     Genre = "Children's Literature",
@@ -125,7 +125,7 @@ namespace Library.Model
                 addingBooks[9] = new Book
                 {
                     User = addingUsers[3],
-                    Id = 9,
+                    Id = 10,
                     Title = "Jane Eyre",
                     Author = "Charlotte Bronte",
                     Genre = "Gothic",
@@ -136,7 +136,7 @@ namespace Library.Model
                 addingBooks[10] = new Book
                 {
                     User = addingUsers[3],
-                    Id = 10,
+                    Id = 11,
                     Title = "Birdsong",
                     Author = "Sebastian Faulks",
                     Genre = "Historical Fiction",
@@ -147,7 +147,7 @@ namespace Library.Model
                 addingBooks[11] = new Book
                 {
                     User = addingUsers[3],
-                    Id = 11,
+                    Id = 12,
                     Title = "Catch-22",
                     Author = "Joseph Heller",
                     Genre = "Satirical",
@@ -158,7 +158,7 @@ namespace Library.Model
                 addingBooks[12] = new Book
                 {
                     User = addingUsers[4],
-                    Id = 12,
+                    Id = 13,
                     Title = "Don Quixote",
                     Author = "Miguel de Cervantes",
                     Genre = "Adventure, Satire",
@@ -169,7 +169,7 @@ namespace Library.Model
                 addingBooks[13] = new Book
                 {
                     User = addingUsers[4],
-                    Id = 13,
+                    Id = 14,
                     Title = "Robinson Crusoe",
                     Author = "Daniel Defoe",
                     Genre = "Adventure, Historical Fiction",
@@ -180,7 +180,7 @@ namespace Library.Model
                 addingBooks[14] = new Book
                 {
                     User = addingUsers[4],
-                    Id = 14,
+                    Id = 15,
                     Title = "Pilgrim's Progress",
                     Author = "Religious Allegory",
                     Genre = "Religious Allegory",
@@ -191,7 +191,7 @@ namespace Library.Model
                 addingBooks[15] = new Book
                 {
                     User = addingUsers[5],
-                    Id = 15,
+                    Id = 16,
                     Title = "Gulliver's Travels",
                     Author = "Jonathan Swift",
                     Genre = "Satire, Adventure",
@@ -202,7 +202,7 @@ namespace Library.Model
                 addingBooks[16] = new Book
                 {
                     User = addingUsers[5],
-                    Id = 16,
+                    Id = 17,
                     Title = "Tom Jones",
                     Author = "Henry Fielding",
                     Genre = "Picaresque, Comedy",
@@ -213,7 +213,7 @@ namespace Library.Model
                 addingBooks[17] = new Book
                 {
                     User = addingUsers[5],
-                    Id = 17,
+                    Id = 18,
                     Title = "Clarissa",
                     Author = "Samuel Richardson",
                     Genre = "Epistolary, Tragedy",
@@ -221,6 +221,40 @@ namespace Library.Model
                     Publisher = "S. Richardson",
                     PublishedDate = "1748"
                 };
+                addingBooks[18] = new Book
+                {
+                    User = addingUsers[6],
+                    Id = 19,
+                    Title = "Dangerous Liaisons",
+                    Author = "Pierre Choderlos de Laclos",
+                    Genre = "Epistolary, Drama",
+                    Description = "The novel explores the manipulative and deceitful games of seduction played by the Marquise de Merteuil and the Vicomte de Valmont as they scheme to control and ruin the lives of others.",
+                    Publisher = "Durand Neveu",
+                    PublishedDate = "1782"
+                };
+                addingBooks[19] = new Book
+                {
+                    User = addingUsers[6],
+                    Id = 20,
+                    Title = "Tristram Shandy",
+                    Author = "Laurence Sterne",
+                    Genre = "Sentimental Novel, Satire",
+                    Description = "The novel humorously chronicles the eccentric life and opinions of Tristram Shandy, filled with digressions and narrative twists that explore themes of identity and existence.",
+                    Publisher = "R. and J. Dodsley",
+                    PublishedDate = "1759"
+                };
+                addingBooks[20] = new Book
+                {
+                    User = addingUsers[6],
+                    Id = 21,
+                    Title = "Emma",
+                    Author = "Jane Austen",
+                    Genre = "Romantic Fiction, Comedy of Manners",
+                    Description = "The novel follows Emma Woodhouse, a young, wealthy, and self-assured woman who enjoys matchmaking among her friends, but her own romantic misjudgments lead to various complications.",
+                    Publisher = "John Murray",
+                    PublishedDate = "1815"
+                };
+                context.Users.AddRange(addingUsers);
                 context.Books.AddRange(addingBooks);
                 context.SaveChanges();
             }

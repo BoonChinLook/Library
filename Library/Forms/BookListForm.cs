@@ -116,7 +116,15 @@ namespace Library
             this.Hide();
             frm.Show();
         }
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            var frm = new LoginForm();
+            frm.Closed += (s, args) => this.Close();
+            this.Hide();
+            frm.Show();
+        }
 
         private void bookListGridView_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e) => e.Cancel = true;
+
     }
 }
