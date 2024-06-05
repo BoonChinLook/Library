@@ -1,6 +1,6 @@
 ﻿namespace Library
 {
-    partial class AddForm
+    partial class EditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,8 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnLibrary = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDiscard = new System.Windows.Forms.Button();
+            this.btnApply = new System.Windows.Forms.Button();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -166,7 +167,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnLogout.Location = new System.Drawing.Point(1010, 15);
+            this.btnLogout.Location = new System.Drawing.Point(1010, 12);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(135, 33);
             this.btnLogout.TabIndex = 14;
@@ -187,12 +188,12 @@
             this.btnLibrary.TabIndex = 13;
             this.btnLibrary.Text = "Library";
             this.btnLibrary.UseVisualStyleBackColor = false;
-            this.btnLibrary.Click += new System.EventHandler(this.btnLibrary_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Controls.Add(this.btnDiscard);
+            this.panel2.Controls.Add(this.btnApply);
             this.panel2.Controls.Add(this.txtTitle);
             this.panel2.Controls.Add(this.lblTitle);
             this.panel2.Controls.Add(this.lblAuthor);
@@ -210,20 +211,35 @@
             this.panel2.Size = new System.Drawing.Size(1164, 483);
             this.panel2.TabIndex = 19;
             // 
-            // btnAdd
+            // btnDiscard
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Teal;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAdd.Location = new System.Drawing.Point(521, 327);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(123, 45);
-            this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAddbook_Click);
+            this.btnDiscard.BackColor = System.Drawing.Color.Teal;
+            this.btnDiscard.FlatAppearance.BorderSize = 0;
+            this.btnDiscard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiscard.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDiscard.Location = new System.Drawing.Point(600, 313);
+            this.btnDiscard.Name = "btnDiscard";
+            this.btnDiscard.Size = new System.Drawing.Size(160, 45);
+            this.btnDiscard.TabIndex = 13;
+            this.btnDiscard.Text = "Discard";
+            this.btnDiscard.UseVisualStyleBackColor = false;
+            this.btnDiscard.Click += new System.EventHandler(this.btnDiscard_Click);
+            // 
+            // btnApply
+            // 
+            this.btnApply.BackColor = System.Drawing.Color.Teal;
+            this.btnApply.FlatAppearance.BorderSize = 0;
+            this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApply.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnApply.Location = new System.Drawing.Point(354, 313);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(163, 45);
+            this.btnApply.TabIndex = 12;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = false;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // txtTitle
             // 
@@ -243,7 +259,7 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Title";
             // 
-            // AddForm
+            // EditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -251,8 +267,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "AddForm";
-            this.Text = "AddForm";
+            this.Name = "EditForm";
+            this.Text = "EditForm";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -277,9 +293,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Button btnLibrary;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnDiscard;
     }
 }
 
