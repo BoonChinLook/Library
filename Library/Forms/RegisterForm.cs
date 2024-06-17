@@ -23,7 +23,7 @@ namespace Library.Forms
             var pwReCheck = txtPassword.Text == txtRepeatPassword.Text;
             var errorMessage = "";
             if (!loginCheck)
-                errorMessage += "The username must contain only letters or digits and be at least 3 characters long.\r\n";
+                errorMessage += "The username must contain only letters and digits and be at least 3 characters long.\r\n";
             if (!pwCheck)
                 errorMessage += "The password must contain at least one capital letter and one digit, and be at least 8 characters long.\r\n";
             if (!pwReCheck)
