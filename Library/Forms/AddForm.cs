@@ -54,6 +54,8 @@ namespace Library
                     frm.Show();
                 }
             }
+            else
+                MessageBox.Show(errorMessage);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

@@ -18,7 +18,7 @@ namespace Library.Forms
 
         private void btnRegisterAndLogin_Click(object sender, EventArgs e)
         {
-            var loginCheck = Regex.IsMatch(txtUserName.Text, @"^[a-zA-Z][a-zA-Z0-9]{3,16}$", RegexOptions.None);
+            var loginCheck = Regex.IsMatch(txtUserName.Text, @"^[a-zA-Z][a-zA-Z0-9]{2,16}$", RegexOptions.None);
             var pwCheck = Regex.IsMatch(txtPassword.Text, @"(?=.*\d)(?=.*[A-Z]).{8,16}", RegexOptions.None);
             var pwReCheck = txtPassword.Text == txtRepeatPassword.Text;
             var errorMessage = "";
