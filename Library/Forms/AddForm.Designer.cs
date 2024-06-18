@@ -103,7 +103,7 @@
             this.lblPublisher.AutoSize = true;
             this.lblPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPublisher.ForeColor = System.Drawing.Color.Teal;
-            this.lblPublisher.Location = new System.Drawing.Point(605, 226);
+            this.lblPublisher.Location = new System.Drawing.Point(596, 222);
             this.lblPublisher.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPublisher.Name = "lblPublisher";
             this.lblPublisher.Size = new System.Drawing.Size(99, 25);
@@ -167,7 +167,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnLogout.Location = new System.Drawing.Point(1010, 15);
+            this.btnLogout.Location = new System.Drawing.Point(1009, 12);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(135, 33);
             this.btnLogout.TabIndex = 14;
@@ -209,7 +209,7 @@
             this.panel2.Controls.Add(this.lblPublisher);
             this.panel2.Location = new System.Drawing.Point(-6, 51);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1164, 483);
+            this.panel2.Size = new System.Drawing.Size(1164, 492);
             this.panel2.TabIndex = 19;
             // 
             // btnDiscard
@@ -264,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1151, 536);
+            this.ClientSize = new System.Drawing.Size(1150, 540);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);

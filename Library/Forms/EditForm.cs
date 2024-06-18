@@ -62,7 +62,7 @@ namespace Library
                     var origBook = LibraryContext.Db.Books.First(v => v.Id == currentBook.Id);
                     LibraryContext.Db.Entry(origBook).CurrentValues.SetValues(newBook);
                     LibraryContext.Db.SaveChanges();
-                    MessageBox.Show($"Book {txtTitle.Text} successfully edited!");
+                    MessageBox.Show($"Book \"{txtTitle.Text}\" successfully edited!");
                     Program.OpenNewForm(this, new BookListForm());
                 }
             }

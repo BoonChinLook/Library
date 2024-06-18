@@ -40,6 +40,13 @@ namespace Library
                 }
             }
         }
+
         private void btnRegister_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new RegisterForm());
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.Equals((char)13))
+                btnLogin_Click(sender, e);
+        }
     }
 }

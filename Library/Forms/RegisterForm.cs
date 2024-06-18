@@ -46,5 +46,11 @@ namespace Library.Forms
         }
 
         private void btnBack_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new LoginForm());
+
+        private void txtRepeatPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.Equals((char)13))
+                btnRegisterAndLogin_Click(sender, e);
+        }
     }
 }

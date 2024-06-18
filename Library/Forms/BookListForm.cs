@@ -40,11 +40,13 @@ namespace Library
             };
             bookListGridView.Columns.Add("Title", "Title");
             bookListGridView.Columns.Add("Author", "Author");
+            bookListGridView.Columns.Add("Genre", "Genre");
             bookListGridView.Columns.Add("Publisher", "Publisher");
+            bookListGridView.Columns.Add("Pub.Date", "Pub.Date");
             bookListGridView.Columns.Add(editButtonColumn);
             bookListGridView.Columns.Add(deleteButtonColumn);
             foreach (var item in books)
-                bookListGridView.Rows.Add(item.Title, item.Author, item.Publisher);
+                bookListGridView.Rows.Add(item.Title, item.Author, item.Genre, item.Publisher, item.PublishedDate);
         }
 
         private void bookListGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -56,15 +58,16 @@ namespace Library
                 var currentRowAuthor = bookListGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
                 switch (e.ColumnIndex)
                 {
-                    case 3:
+                    case 5:
                         Program.OpenNewForm(this, new EditForm(books.First(v => v.Title == currentRowName && v.Author == currentRowAuthor)));
                         break;
-                    case 4:
+                    case 6:
                         var currentBook = books.First(v => v.Title == currentRowName && v.Author == currentRowAuthor);
                         LibraryContext.Db.Books.Remove(currentBook);
                         LibraryContext.Db.SaveChanges();
                         books.Remove(currentBook);
                         bookListGridView.Rows.RemoveAt(e.RowIndex);
+                        MessageBox.Show($"Book \"{currentBook.Title}\" successfully removed!");
                         break;
                 }
             }

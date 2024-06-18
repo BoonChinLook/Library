@@ -50,7 +50,7 @@ namespace Library
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblUsername.ForeColor = System.Drawing.Color.Teal;
-            this.lblUsername.Location = new System.Drawing.Point(437, 119);
+            this.lblUsername.Location = new System.Drawing.Point(579, 195);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(94, 20);
             this.lblUsername.TabIndex = 0;
@@ -58,7 +58,7 @@ namespace Library
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(439, 143);
+            this.txtUsername.Location = new System.Drawing.Point(581, 219);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsername.MaxLength = 16;
             this.txtUsername.Name = "txtUsername";
@@ -67,20 +67,21 @@ namespace Library
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(439, 226);
+            this.txtPassword.Location = new System.Drawing.Point(581, 302);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.MaxLength = 16;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(248, 22);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblPassword.ForeColor = System.Drawing.Color.Teal;
-            this.lblPassword.Location = new System.Drawing.Point(437, 208);
+            this.lblPassword.Location = new System.Drawing.Point(579, 284);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(91, 20);
             this.lblPassword.TabIndex = 2;
@@ -91,7 +92,7 @@ namespace Library
             this.btnLogin.BackColor = System.Drawing.Color.Teal;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(441, 314);
+            this.btnLogin.Location = new System.Drawing.Point(583, 390);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 36);
@@ -105,7 +106,7 @@ namespace Library
             this.btnRegister.BackColor = System.Drawing.Color.Teal;
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(588, 314);
+            this.btnRegister.Location = new System.Drawing.Point(730, 390);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(100, 36);
@@ -120,9 +121,9 @@ namespace Library
             this.lblTotalUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblTotalUsers.ForeColor = System.Drawing.Color.Teal;
             this.lblTotalUsers.Image = ((System.Drawing.Image)(resources.GetObject("lblTotalUsers.Image")));
-            this.lblTotalUsers.Location = new System.Drawing.Point(613, 18);
+            this.lblTotalUsers.Location = new System.Drawing.Point(682, 50);
             this.lblTotalUsers.Name = "lblTotalUsers";
-            this.lblTotalUsers.Size = new System.Drawing.Size(108, 20);
+            this.lblTotalUsers.Size = new System.Drawing.Size(122, 20);
             this.lblTotalUsers.TabIndex = 6;
             this.lblTotalUsers.Text = "Total  users: ";
             // 
@@ -132,9 +133,9 @@ namespace Library
             this.panelImage.Controls.Add(this.picBoxLogin);
             this.panelImage.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelImage.Location = new System.Drawing.Point(0, 0);
-            this.panelImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelImage.Margin = new System.Windows.Forms.Padding(4);
             this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(349, 450);
+            this.panelImage.Size = new System.Drawing.Size(467, 540);
             this.panelImage.TabIndex = 7;
             // 
             // picBoxLogin
@@ -143,7 +144,7 @@ namespace Library
             this.picBoxLogin.Location = new System.Drawing.Point(7, 0);
             this.picBoxLogin.Margin = new System.Windows.Forms.Padding(7, 6, 4, 4);
             this.picBoxLogin.Name = "picBoxLogin";
-            this.picBoxLogin.Size = new System.Drawing.Size(345, 447);
+            this.picBoxLogin.Size = new System.Drawing.Size(460, 447);
             this.picBoxLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxLogin.TabIndex = 0;
             this.picBoxLogin.TabStop = false;
@@ -152,7 +153,7 @@ namespace Library
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1150, 540);
             this.Controls.Add(this.panelImage);
             this.Controls.Add(this.lblTotalUsers);
             this.Controls.Add(this.btnRegister);
