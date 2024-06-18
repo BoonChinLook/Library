@@ -38,22 +38,13 @@ namespace Library.Forms
                     LibraryContext.Db.Users.Add(newUser);
                     LibraryContext.Db.SaveChanges();
                     MessageBox.Show($"User with name {txtUserName.Text} registered successfully!");
-                    var frm = new LoginForm();
-                    frm.Closed += (s, args) => this.Close();
-                    this.Hide();
-                    frm.Show();
+                    Program.OpenNewForm(this, new LoginForm());
                 }
             }
             else
                 MessageBox.Show(errorMessage);
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            var frm = new LoginForm();
-            frm.Closed += (s, args) => this.Close();
-            this.Hide();
-            frm.Show();
-        }
+        private void btnBack_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new LoginForm());
     }
 }

@@ -57,10 +57,7 @@ namespace Library
                 switch (e.ColumnIndex)
                 {
                     case 3:
-                        var frm = new EditForm(books.First(v => v.Title == currentRowName && v.Author == currentRowAuthor));
-                        frm.Closed += (s, args) => this.Close();
-                        this.Hide();
-                        frm.Show();
+                        Program.OpenNewForm(this, new EditForm(books.First(v => v.Title == currentRowName && v.Author == currentRowAuthor)));
                         break;
                     case 4:
                         var currentBook = books.First(v => v.Title == currentRowName && v.Author == currentRowAuthor);
@@ -101,29 +98,9 @@ namespace Library
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            var frm = new AddForm();
-            frm.Closed += (s, args) => this.Close();
-            this.Hide();
-            frm.Show();
-        }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            var frm = new WelcomeForm();
-            frm.Closed += (s, args) => this.Close();
-            this.Hide();
-            frm.Show();
-        }
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            var frm = new LoginForm();
-            frm.Closed += (s, args) => this.Close();
-            this.Hide();
-            frm.Show();
-        }
-
+        private void btnAdd_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new AddForm());
+        private void btnHome_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new WelcomeForm());
+        private void btnLogout_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new LoginForm());
         private void bookListGridView_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e) => e.Cancel = true;
 
     }

@@ -42,6 +42,7 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnLibrary = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDiscard = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -192,6 +193,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.btnDiscard);
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.txtTitle);
             this.panel2.Controls.Add(this.lblTitle);
@@ -210,6 +212,21 @@
             this.panel2.Size = new System.Drawing.Size(1164, 483);
             this.panel2.TabIndex = 19;
             // 
+            // btnDiscard
+            // 
+            this.btnDiscard.BackColor = System.Drawing.Color.Teal;
+            this.btnDiscard.FlatAppearance.BorderSize = 0;
+            this.btnDiscard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiscard.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDiscard.Location = new System.Drawing.Point(600, 313);
+            this.btnDiscard.Name = "btnDiscard";
+            this.btnDiscard.Size = new System.Drawing.Size(160, 45);
+            this.btnDiscard.TabIndex = 13;
+            this.btnDiscard.Text = "Discard";
+            this.btnDiscard.UseVisualStyleBackColor = false;
+            this.btnDiscard.Click += new System.EventHandler(this.btnDiscard_Click);
+            // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Teal;
@@ -217,11 +234,11 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAdd.Location = new System.Drawing.Point(521, 327);
+            this.btnAdd.Location = new System.Drawing.Point(354, 313);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(123, 45);
+            this.btnAdd.Size = new System.Drawing.Size(163, 45);
             this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Apply";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAddbook_Click);
             // 
@@ -280,6 +297,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnLibrary;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnDiscard;
     }
 }
 

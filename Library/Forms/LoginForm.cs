@@ -35,20 +35,11 @@ namespace Library
                     else
                     {
                         User.CurrentUser = foundUser;
-                        var frm = new WelcomeForm();
-                        frm.Closed += (s, args) => this.Close();
-                        this.Hide();
-                        frm.Show();
+                        Program.OpenNewForm(this, new WelcomeForm());
                     }
                 }
             }
         }
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            var frm = new RegisterForm();
-            frm.Closed += (s, args) => this.Close();
-            this.Hide();
-            frm.Show();
-        }
+        private void btnRegister_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new RegisterForm());
     }
 }

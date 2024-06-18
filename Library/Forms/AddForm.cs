@@ -14,7 +14,6 @@ namespace Library
 {
     public partial class AddForm : Form
     {
-        
         public AddForm() => InitializeComponent();
         
         private void btnAddbook_Click(object sender, EventArgs e)
@@ -48,30 +47,17 @@ namespace Library
                     LibraryContext.Db.Books.Add(newBook);
                     LibraryContext.Db.SaveChanges();
                     MessageBox.Show($"Book {txtTitle.Text} successfully added!");
-                    var frm = new BookListForm();
-                    frm.Closed += (s, args) => this.Close();
-                    this.Hide();
-                    frm.Show();
+                    Program.OpenNewForm(this, new BookListForm());
                 }
             }
             else
                 MessageBox.Show(errorMessage);
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            var frm = new LoginForm();
-            frm.Closed += (s, args) => this.Close();
-            this.Hide();
-            frm.Show();
-        }
+        private void btnLogout_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new LoginForm());
 
-        private void btnLibrary_Click(object sender, EventArgs e)
-        {
-            var frm = new BookListForm();
-            frm.Closed += (s, args) => this.Close();
-            this.Hide();
-            frm.Show();
-        }
+        private void btnLibrary_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new BookListForm());
+
+        private void btnDiscard_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new BookListForm());
     }
 }

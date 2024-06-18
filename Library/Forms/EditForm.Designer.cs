@@ -170,7 +170,7 @@
             this.btnLogout.Location = new System.Drawing.Point(1010, 12);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(135, 33);
-            this.btnLogout.TabIndex = 14;
+            this.btnLogout.TabIndex = 15;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -185,7 +185,7 @@
             this.btnLibrary.Location = new System.Drawing.Point(18, 9);
             this.btnLibrary.Name = "btnLibrary";
             this.btnLibrary.Size = new System.Drawing.Size(93, 39);
-            this.btnLibrary.TabIndex = 13;
+            this.btnLibrary.TabIndex = 14;
             this.btnLibrary.Text = "Library";
             this.btnLibrary.UseVisualStyleBackColor = false;
             // 

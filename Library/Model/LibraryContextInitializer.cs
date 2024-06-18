@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Library.Model
 {
-    public class LibraryContextInitializer : DropCreateDatabaseAlways<LibraryContext>
+    public class LibraryContextInitializer : CreateDatabaseIfNotExists<LibraryContext>
     {
         protected override void Seed(LibraryContext context)
         {
