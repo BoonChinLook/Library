@@ -31,7 +31,7 @@ namespace Library
                 errorMessage += "Enter Genre.\r\n";
             if (!titleCheck && !authorCheck && !genreCheck)
             {
-                if (LibraryContext.Db.Books.FirstOrDefault(v => v.Title == txtTitle.Text) != null)
+                if (LibraryContext.Db.Books.FirstOrDefault(v => v.User.Id == User.CurrentUser.Id && v.Title == txtTitle.Text) != null)
                     MessageBox.Show($"Book with name {txtTitle.Text} already exists!");
                 else
                 {

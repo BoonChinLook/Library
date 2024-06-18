@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -41,8 +42,10 @@ namespace Library
                 errorMessage += "Enter Genre.\r\n";
             if (!titleCheck && !authorCheck && !genreCheck)
             {
-                if (LibraryContext.Db.Books.FirstOrDefault(v => v.Title == txtTitle.Text) != null)
+                if (LibraryContext.Db.Books.FirstOrDefault(v => v.User.Id == User.CurrentUser.Id && v.Title == txtTitle.Text && currentBook.Id != v.Id) != null)
                     MessageBox.Show($"Book with name {txtTitle.Text} already exists!");
+                else if(currentBook.Title == txtTitle.Text && currentBook.Author == txtAuthor.Text && currentBook.Genre == txtGenre.Text && currentBook.Description == txtDescription.Text && currentBook.Publisher == txtPublisher.Text && currentBook.PublishedDate == txtPublishedDate.Text)
+                    MessageBox.Show("No changes were made. Please press the \"Discard\" button if you do not wish to make any changes.");
                 else
                 {
                     var newBook = new Book
