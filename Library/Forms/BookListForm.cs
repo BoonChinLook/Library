@@ -52,17 +52,16 @@ namespace Library
         private void bookListGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0 && e.ColumnIndex > 4)
             {
                 var currentRowName = bookListGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                var currentRowAuthor = bookListGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                var currentBook = books.First(v => v.Title == currentRowName);
                 switch (e.ColumnIndex)
                 {
                     case 5:
-                        this.StartAndSavePosition(new EditForm(books.First(v => v.Title == currentRowName && v.Author == currentRowAuthor)));
+                        this.StartAndSavePosition(new EditForm(currentBook));
                         break;
                     case 6:
-                        var currentBook = books.First(v => v.Title == currentRowName && v.Author == currentRowAuthor);
                         LibraryContext.Db.Books.Remove(currentBook);
                         LibraryContext.Db.SaveChanges();
                         books.Remove(currentBook);
