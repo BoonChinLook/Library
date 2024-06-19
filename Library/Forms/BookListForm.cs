@@ -59,7 +59,7 @@ namespace Library
                 switch (e.ColumnIndex)
                 {
                     case 5:
-                        Program.OpenNewForm(this, new EditForm(books.First(v => v.Title == currentRowName && v.Author == currentRowAuthor)));
+                        this.StartAndSavePosition(new EditForm(books.First(v => v.Title == currentRowName && v.Author == currentRowAuthor)));
                         break;
                     case 6:
                         var currentBook = books.First(v => v.Title == currentRowName && v.Author == currentRowAuthor);
@@ -101,9 +101,9 @@ namespace Library
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new AddForm());
-        private void btnHome_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new WelcomeForm());
-        private void btnLogout_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new LoginForm());
+        private void btnAdd_Click(object sender, EventArgs e) => this.StartAndSavePosition(new AddForm());
+        private void btnHome_Click(object sender, EventArgs e) => this.StartAndSavePosition(new WelcomeForm());
+        private void btnLogout_Click(object sender, EventArgs e) => this.StartAndSavePosition(new LoginForm());
         private void bookListGridView_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e) => e.Cancel = true;
 
     }

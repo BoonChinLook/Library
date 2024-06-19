@@ -63,14 +63,14 @@ namespace Library
                     LibraryContext.Db.Entry(origBook).CurrentValues.SetValues(newBook);
                     LibraryContext.Db.SaveChanges();
                     MessageBox.Show($"Book \"{txtTitle.Text}\" successfully edited!");
-                    Program.OpenNewForm(this, new BookListForm());
+                    this.StartAndSavePosition(new BookListForm());
                 }
             }
             else
                 MessageBox.Show(errorMessage);
         }
 
-        private void btnDiscard_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new BookListForm());
-        private void btnLogout_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new LoginForm());
+        private void btnDiscard_Click(object sender, EventArgs e) => this.StartAndSavePosition(new BookListForm());
+        private void btnLogout_Click(object sender, EventArgs e) => this.StartAndSavePosition(new LoginForm());
     }
 }

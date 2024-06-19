@@ -35,13 +35,13 @@ namespace Library
                     else
                     {
                         User.CurrentUser = foundUser;
-                        Program.OpenNewForm(this, new WelcomeForm());
+                        this.StartAndSavePosition(new WelcomeForm());
                     }
                 }
             }
         }
 
-        private void btnRegister_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new RegisterForm());
+        private void btnRegister_Click(object sender, EventArgs e) => this.StartAndSavePosition(new RegisterForm());
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {

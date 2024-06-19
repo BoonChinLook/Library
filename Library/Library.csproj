@@ -82,6 +82,7 @@
     <Compile Include="Forms\WelcomeForm.Designer.cs">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Extension.cs" />
     <Compile Include="Model\LibraryContext.cs" />
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>

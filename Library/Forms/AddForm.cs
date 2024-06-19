@@ -47,17 +47,17 @@ namespace Library
                     LibraryContext.Db.Books.Add(newBook);
                     LibraryContext.Db.SaveChanges();
                     MessageBox.Show($"Book {txtTitle.Text} successfully added!");
-                    Program.OpenNewForm(this, new BookListForm());
+                    this.StartAndSavePosition(new BookListForm());
                 }
             }
             else
                 MessageBox.Show(errorMessage);
         }
 
-        private void btnLogout_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new LoginForm());
+        private void btnLogout_Click(object sender, EventArgs e) => this.StartAndSavePosition(new LoginForm());
 
-        private void btnLibrary_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new BookListForm());
+        private void btnLibrary_Click(object sender, EventArgs e) => this.StartAndSavePosition(new BookListForm());
 
-        private void btnDiscard_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new BookListForm());
+        private void btnDiscard_Click(object sender, EventArgs e) => this.StartAndSavePosition(new BookListForm());
     }
 }

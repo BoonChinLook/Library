@@ -38,14 +38,14 @@ namespace Library.Forms
                     LibraryContext.Db.Users.Add(newUser);
                     LibraryContext.Db.SaveChanges();
                     MessageBox.Show($"User with name {txtUserName.Text} registered successfully!");
-                    Program.OpenNewForm(this, new LoginForm());
+                    this.StartAndSavePosition(new LoginForm());
                 }
             }
             else
                 MessageBox.Show(errorMessage);
         }
 
-        private void btnBack_Click(object sender, EventArgs e) => Program.OpenNewForm(this, new LoginForm());
+        private void btnBack_Click(object sender, EventArgs e) => this.StartAndSavePosition(new LoginForm());
 
         private void txtRepeatPassword_KeyPress(object sender, KeyPressEventArgs e)
         {

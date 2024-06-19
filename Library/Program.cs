@@ -17,14 +17,5 @@ namespace Library
             LibraryContext.Db = new LibraryContext();
             Application.Run(new LoginForm());
         }
-
-        public static void OpenNewForm (Form currentForm, Form newForm)
-        {
-            newForm.Closed += (s, args) => currentForm.Close();
-            newForm.StartPosition = FormStartPosition.Manual;
-            newForm.Location = currentForm.Location;
-            currentForm.Hide();
-            newForm.Show();
-        }
     }
 }
