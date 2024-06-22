@@ -30,8 +30,8 @@ namespace Library
                 errorMessage += "Enter Genre.\r\n";
             if (!titleCheck && !authorCheck && !genreCheck)
             {
-                if (LibraryContext.Db.Books.FirstOrDefault(v => v.User.Id == User.CurrentUser.Id && v.Title == txtTitle.Text) != null)
-                    MessageBox.Show($"Book with name {txtTitle.Text} already exists!");
+                if (LibraryContext.Db.Books.FirstOrDefault(v => v.User.Id == User.CurrentUser.Id && v.Title.Equals(txtTitle.Text, StringComparison.OrdinalIgnoreCase)) != null)
+                    MessageBox.Show($"Book with name {txtTitle.Text} already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
                     var newBook = new Book
@@ -46,12 +46,12 @@ namespace Library
                     };
                     LibraryContext.Db.Books.Add(newBook);
                     LibraryContext.Db.SaveChanges();
-                    MessageBox.Show($"Book {txtTitle.Text} successfully added!");
+                    MessageBox.Show($"Book {txtTitle.Text} successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.StartAndSavePosition(new BookListForm());
                 }
             }
             else
-                MessageBox.Show(errorMessage);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnLogout_Click(object sender, EventArgs e) => this.StartAndSavePosition(new LoginForm());

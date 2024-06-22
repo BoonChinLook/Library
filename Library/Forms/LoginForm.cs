@@ -22,21 +22,21 @@ namespace Library
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text))
-                MessageBox.Show("Enter Login & Password");
+                MessageBox.Show("Enter Login & Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                var foundUser = LibraryContext.Db.Users.FirstOrDefault(v => v.Name == txtUsername.Text);
+                var foundUser = LibraryContext.Db.Users.FirstOrDefault(v => v.Name.Equals(txtUsername.Text, StringComparison.Ordinal));
                 if (foundUser == null)
-                    MessageBox.Show("Login is not exists!");
+                    MessageBox.Show("Login is not exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    if (foundUser.Password != txtPassword.Text)
-                        MessageBox.Show("Wrong Password!");
-                    else
+                    if (foundUser.Password.Equals(txtPassword.Text, StringComparison.Ordinal))
                     {
                         User.CurrentUser = foundUser;
                         this.StartAndSavePosition(new WelcomeForm());
                     }
+                    else
+                        MessageBox.Show("Wrong Password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

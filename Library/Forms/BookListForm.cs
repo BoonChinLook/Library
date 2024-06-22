@@ -55,7 +55,7 @@ namespace Library
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0 && e.ColumnIndex > 4)
             {
                 var currentRowName = bookListGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                var currentBook = books.First(v => v.Title == currentRowName);
+                var currentBook = books.First(v => v.Title.Equals(currentRowName, StringComparison.OrdinalIgnoreCase));
                 switch (e.ColumnIndex)
                 {
                     case 5:
@@ -66,7 +66,7 @@ namespace Library
                         LibraryContext.Db.SaveChanges();
                         books.Remove(currentBook);
                         bookListGridView.Rows.RemoveAt(e.RowIndex);
-                        MessageBox.Show($"Book \"{currentBook.Title}\" successfully removed!");
+                        MessageBox.Show($"Book \"{currentBook.Title}\" successfully removed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                 }
             }

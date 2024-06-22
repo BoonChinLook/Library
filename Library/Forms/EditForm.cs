@@ -42,10 +42,15 @@ namespace Library
                 errorMessage += "Enter Genre.\r\n";
             if (!titleCheck && !authorCheck && !genreCheck)
             {
-                if (LibraryContext.Db.Books.FirstOrDefault(v => v.User.Id == User.CurrentUser.Id && v.Title == txtTitle.Text && currentBook.Id != v.Id) != null)
-                    MessageBox.Show($"Book with name {txtTitle.Text} already exists!");
-                else if(currentBook.Title == txtTitle.Text && currentBook.Author == txtAuthor.Text && currentBook.Genre == txtGenre.Text && currentBook.Description == txtDescription.Text && currentBook.Publisher == txtPublisher.Text && currentBook.PublishedDate == txtPublishedDate.Text)
-                    MessageBox.Show("No changes were made. Please press the \"Discard\" button if you do not wish to make any changes.");
+                if (LibraryContext.Db.Books.FirstOrDefault(v => v.User.Id == User.CurrentUser.Id && currentBook.Id != v.Id && v.Title.Equals(txtTitle.Text, StringComparison.OrdinalIgnoreCase)) != null)
+                    MessageBox.Show($"Book with name {txtTitle.Text} already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if(currentBook.Title.Equals(txtTitle.Text, StringComparison.OrdinalIgnoreCase) &&
+                        currentBook.Author.Equals(txtAuthor.Text, StringComparison.OrdinalIgnoreCase) &&
+                        currentBook.Genre.Equals(txtGenre.Text, StringComparison.OrdinalIgnoreCase) &&
+                        currentBook.Description.Equals(txtDescription.Text, StringComparison.OrdinalIgnoreCase) &&
+                        currentBook.Publisher.Equals(txtPublisher.Text, StringComparison.OrdinalIgnoreCase) &&
+                        currentBook.PublishedDate.Equals(txtPublishedDate.Text, StringComparison.OrdinalIgnoreCase))
+                    MessageBox.Show("No changes were made. Please press the \"Discard\" button if you do not wish to make any changes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
                     var newBook = new Book
@@ -62,12 +67,12 @@ namespace Library
                     var origBook = LibraryContext.Db.Books.First(v => v.Id == currentBook.Id);
                     LibraryContext.Db.Entry(origBook).CurrentValues.SetValues(newBook);
                     LibraryContext.Db.SaveChanges();
-                    MessageBox.Show($"Book \"{txtTitle.Text}\" successfully edited!");
+                    MessageBox.Show($"Book \"{txtTitle.Text}\" successfully edited!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.StartAndSavePosition(new BookListForm());
                 }
             }
             else
-                MessageBox.Show(errorMessage);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnDiscard_Click(object sender, EventArgs e) => this.StartAndSavePosition(new BookListForm());

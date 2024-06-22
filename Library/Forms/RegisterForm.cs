@@ -20,7 +20,7 @@ namespace Library.Forms
         {
             var loginCheck = Regex.IsMatch(txtUserName.Text, @"^[a-zA-Z][a-zA-Z0-9]{2,16}$", RegexOptions.None);
             var pwCheck = Regex.IsMatch(txtPassword.Text, @"(?=.*\d)(?=.*[A-Z]).{8,16}", RegexOptions.None);
-            var pwReCheck = txtPassword.Text == txtRepeatPassword.Text;
+            var pwReCheck = string.Equals(txtPassword.Text, txtRepeatPassword.Text, StringComparison.Ordinal);
             var errorMessage = "";
             if (!loginCheck)
                 errorMessage += "The username must contain only letters and digits and be at least 3 characters long.\r\n";
@@ -30,19 +30,19 @@ namespace Library.Forms
                 errorMessage += "The password and the confirmation password must match.";
             if (loginCheck && pwCheck && pwReCheck) 
             {
-                if (LibraryContext.Db.Users.FirstOrDefault(v => v.Name == txtUserName.Text) != null)
-                    MessageBox.Show($"User with name {txtUserName.Text} already exists!");
+                if (LibraryContext.Db.Users.FirstOrDefault(v => v.Name.Equals(txtUserName.Text, StringComparison.OrdinalIgnoreCase)) != null)
+                    MessageBox.Show($"User with name {txtUserName.Text} already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     var newUser = new User { Name = txtUserName.Text, Password = txtPassword.Text };
                     LibraryContext.Db.Users.Add(newUser);
                     LibraryContext.Db.SaveChanges();
-                    MessageBox.Show($"User with name {txtUserName.Text} registered successfully!");
+                    MessageBox.Show($"User with name {txtUserName.Text} registered successfully!", "Succeess", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.StartAndSavePosition(new LoginForm());
                 }
             }
             else
-                MessageBox.Show(errorMessage);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnBack_Click(object sender, EventArgs e) => this.StartAndSavePosition(new LoginForm());
