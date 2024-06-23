@@ -57,12 +57,12 @@ namespace Library
                     {
                         Id = currentBook.Id,
                         User = currentBook.User,
-                        Title = txtTitle.Text,
-                        Author = txtAuthor.Text,
-                        Genre = txtGenre.Text,
-                        Description = txtDescription.Text,
-                        Publisher = txtPublisher.Text,
-                        PublishedDate = txtPublishedDate.Text
+                        Title = txtTitle.Text.Truncate(250),
+                        Author = txtAuthor.Text.Truncate(250),
+                        Genre = txtGenre.Text.Truncate(250),
+                        Description = txtDescription.Text.Truncate(250),
+                        Publisher = txtPublisher.Text.Truncate(250),
+                        PublishedDate = txtPublishedDate.Text.Truncate(250)
                     };
                     var origBook = LibraryContext.Db.Books.First(v => v.Id == currentBook.Id);
                     LibraryContext.Db.Entry(origBook).CurrentValues.SetValues(newBook);

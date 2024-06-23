@@ -37,12 +37,12 @@ namespace Library
                     var newBook = new Book
                     {
                         User = User.CurrentUser,
-                        Title = txtTitle.Text,
-                        Author = txtAuthor.Text,
-                        Genre = txtGenre.Text,
-                        Description = txtDescription.Text,
-                        Publisher = txtPublisher.Text,
-                        PublishedDate = txtPublishedDate.Text
+                        Title = txtTitle.Text.Truncate(250),
+                        Author = txtAuthor.Text.Truncate(250),
+                        Genre = txtGenre.Text.Truncate(250),
+                        Description = txtDescription.Text.Truncate(250),
+                        Publisher = txtPublisher.Text.Truncate(250),
+                        PublishedDate = txtPublishedDate.Text.Truncate(250)
                     };
                     LibraryContext.Db.Books.Add(newBook);
                     LibraryContext.Db.SaveChanges();
